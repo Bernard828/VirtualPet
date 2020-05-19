@@ -20,5 +20,10 @@ namespace VirtualPet
         //public int Sickness { get; set; }
 
 
+        public void SetName(string petName)
+        {
+            Name = petName;
+        }
+
     }
 }

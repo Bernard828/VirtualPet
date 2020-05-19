@@ -24,33 +24,17 @@ namespace VirtualPet
                 switch (userChoice)
                 {
                     case "v":
-                        Pet_Constructor_Should_Instantiate_Pet_Object();
                         break;
                     case "1":
-                        Pet_Given_Name();
                         break;
                     case "2":
-                        Feed_Should_Decrease_Hunger_By_40();
                         break;
-                    
                     case "l":
                         continuePlay = false;
                         Console.WriteLine("Dont forget to comeback and feed!");
                         break;
                     default:
                         break;
-                }
-                static void Pet_Constructor_Should_Instantiate_Pet_Object()
-                { }
-                static void Pet_Given_Name()
-                { 
-                    testPet dog = new Pet;
-                    var Fluffy = dog;
-                }
-                static void Feed_Should_Decrease_Hunger_By_40()
-                {
-                    Console.WriteLine("Fluffy's Stats: ");
-                    Fluffy.DisplayStats();
                 }
                 //static void
                 //    { }
