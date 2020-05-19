@@ -43,9 +43,15 @@ namespace VirtualPet
                 static void Pet_Constructor_Should_Instantiate_Pet_Object()
                 { }
                 static void Pet_Given_Name()
-                { }
+                { 
+                    testPet dog = new Pet;
+                    var Fluffy = dog;
+                }
                 static void Feed_Should_Decrease_Hunger_By_40()
-                { }
+                {
+                    Console.WriteLine("Fluffy's Stats: ");
+                    Fluffy.DisplayStats();
+                }
                 //static void
                 //    { }
                 //static void

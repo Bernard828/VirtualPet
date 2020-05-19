@@ -4,13 +4,13 @@ using System.Text;
 
 namespace VirtualPet
 {
-    public class Pet (string SetName, int Hunger, int Thirst, int Sleepiness, int Sickness)
+    public class Pet
     {
-        private string SetName;
-        private int Hunger;
-        private int Thirst;
-        private int Sleepiness;
-        private int Sickness;
+        private string name;
+        private int hunger;
+        private int thirst;
+        private int sleepiness;
+        private int sickness;
 
 
         public string Name { get; set; }
