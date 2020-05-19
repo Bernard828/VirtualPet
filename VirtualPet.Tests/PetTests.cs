@@ -7,10 +7,10 @@ namespace VirtualPet.Tests
     {
         private Pet testPet;
 
-                public  PetTests( )
-        {
-            testPet = new Pet();
-        }
+            public  PetTests( )
+            {
+            testPet = new Pet;
+            }
 
         [Fact]
         public void Pet_Constructor_Should_Instantiate_Pet_Object()
@@ -23,9 +23,11 @@ namespace VirtualPet.Tests
         // Add source code to eliminate the build errors (red squiggle) and pass the test
         
         [Fact]
-        public void Pet_Given_Name()
+        public void Pet_Should_Have_Name()
         {
-             Assert.NotNull(testPet.Name);
+            testPet.Name = "Fluffy";
+
+            Assert.NotNull(testPet.Name);
         }
 
         [Fact]
@@ -39,25 +41,25 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetName_Should_Get_Pet_Name_Value()
         {
-            //testPet.SetName("Fido");
+            testPet.GetName("Fido");
 
-            //string testPetName = testPet.GetName();
+            string testPetName = testPet.GetName("Fido");
 
-            //Assert.Equal("Fido", testPetName);
+            Assert.Equal("Fido", testPetName);
         }
 
         [Fact]
         public void Pet_Should_Have_Species()
         {
-            // Assert.NotNull(testPet.Species);
+             Assert.NotNull(testPet.Species);
         }
 
         [Fact]
         public void SetSpecies_Should_Assign_Pet_Species_Property()
         {
-            //testPet.SetSpecies("Cat");
+            testPet.SetSpecies("Cat");
 
-            //Assert.Equal("Cat", testPet.Species);
+            Assert.Equal("Cat", testPet.Species);
         }
 
         [Fact]

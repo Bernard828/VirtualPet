@@ -36,10 +36,6 @@ namespace VirtualPet
                     default:
                         break;
                 }
-                //static void
-                //    { }
-                //static void
-                //    { }
             }
         Console.WriteLine("Press enter to return to the Main Menu");
         Console.ReadLine();
