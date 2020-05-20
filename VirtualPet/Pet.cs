@@ -45,10 +45,10 @@ namespace VirtualPet
         {
             return species;
         }
-        //public void SetHunger (int hunger)
-        //{
-        //    Hunger = hunger;
-        //}
+        public void SetHunger(int hunger)
+        {
+            Hunger = hunger;
+        }
 
         public void Feed ()
         {
