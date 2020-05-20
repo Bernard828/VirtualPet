@@ -11,6 +11,8 @@ namespace VirtualPet
             bool continuePlay = true;
             while (continuePlay)
             {
+                pet.Tick();
+
                 Console.WriteLine("Hello! Welcome to Virtual Pets\n");
                 Console.WriteLine("Enter V to visit my Pet");
                 Console.WriteLine("1. Let's make a new pet");
@@ -20,10 +22,9 @@ namespace VirtualPet
                 Console.WriteLine("5. Visit the vet:");
                 Console.WriteLine("Press L to leave ");
 
-                pet.GetHunger();
+               
 
                 string userChoice = Console.ReadLine().ToLower();
-
                 switch (userChoice)
                 {
                     case "v":
