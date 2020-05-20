@@ -94,7 +94,7 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void GetBoredom_Should_Return_Initial_Thirst_Level_Of_80()
+        public void GetThirst_Should_Return_Initial_Thirst_Level_Of_80()
         {
             int testPetThirst = testPet.GetThirst();
 
@@ -136,23 +136,23 @@ namespace VirtualPet.Tests
         {
             testPet.Play();
 
-            Assert.Equal(60, testPet.GetHunger());
+            Assert.Equal(55, testPet.GetHunger());
         }
 
         [Fact]
-        public void Play_Should_Decrease_Boredom_By_20()
+        public void Play_Should_Increase_Thirst_By_20()
         {
-            // testPet.Play();
+            testPet.Play();
 
-            // Assert.Equal(40, testPet.GetBoredom());
+            Assert.Equal(60, testPet.GetThirst());
         }
 
         [Fact]
         public void Play_Should_Increase_Health_By_10()
         {
-            // testPet.Play();
+            testPet.Play();
 
-            // Assert.Equal(40, testPet.GetHealth());
+            Assert.Equal(70, testPet.GetHealth());
         }
 
         [Fact]
@@ -168,7 +168,7 @@ namespace VirtualPet.Tests
         {
             testPet.Tick();
 
-            Assert.Equal(55, testPet.GetThirst());
+            Assert.Equal(60, testPet.GetThirst());
         }
 
         [Fact]
@@ -176,7 +176,7 @@ namespace VirtualPet.Tests
         {
             testPet.Tick();
 
-            Assert.Equal(25, testPet.GetHealth());
+            Assert.Equal(65, testPet.GetHealth());
         }
     }
 }

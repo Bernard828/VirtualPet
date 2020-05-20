@@ -14,10 +14,10 @@ namespace VirtualPet
                 pet.Tick();
 
                 Console.WriteLine("Hello! Welcome to Virtual Pets\n");
-                Console.WriteLine("1. To visit my Pet");  //see how my pet's doing. 
+                Console.WriteLine("1. To visit my Pet");
                 Console.WriteLine("2. Feed your animal");
                 Console.WriteLine("3. Water is always necesary.");
-                Console.WriteLine("4. Bedtime!");
+                Console.WriteLine("4. Let your pet take a nap!");
                 Console.WriteLine("5. Visit the vet:");
                 
                 Console.WriteLine("Press L to leave ");
@@ -38,21 +38,19 @@ namespace VirtualPet
                         break; 
                     }
                     case "3":
-                    { 
+                    {
+                        pet.GiveWater();
                         break;
                     }
                     case "4":
                     {
+                        pet.TakeNap();
                         break;
                     }
                     case "5":
                     {
+                        pet.SeeDoctor();
                         break; 
-                    }
-                    case "6":
-                    {
-                            Console.WriteLine();
-                        break;
                     }
                     case "l":
                     {
