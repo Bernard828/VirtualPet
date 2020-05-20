@@ -7,9 +7,9 @@ namespace VirtualPet.Tests
     {
         private Pet testPet;
 
-            public  PetTests( )
+            public PetTests( )
             {
-            testPet = new Pet;
+            testPet = new Pet();
             }
 
         [Fact]
@@ -65,25 +65,26 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetSpecies_Should_Get_Pet_Species_Value()
         {
-            //testPet.SetSpecies("Dog");
+            testPet.SetSpecies("Dog");
 
-            //string testPetSpecies = testPet.GetSpecies();
+            string testPetSpecies = testPet.GetSpecies("Dog");
 
-            //Assert.Equal("Dog", testPetSpecies);
+            Assert.Equal("Dog", testPetSpecies);
         }
 
         [Fact]
         public void Pet_Should_Have_Hunger()
         {
-            // Assert.NotNull(testPet.Hunger);
+            Assert.NotNull(testPet.Hunger);
         }
 
         [Fact]
         public void GetHunger_Should_Return_Initial_Hunger_Level_Of_50()
         {
-            //int testPetHunger = testPet.GetHunger();
+            
+            int testPetHunger = testPet.GetHunger(50);
 
-            // Assert.Equal(50, testPetHunger);
+            Assert.Equal(50, testPetHunger);
         }
 
         [Fact]
@@ -103,31 +104,31 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Health()
         {
-            // Assert.NotNull(testPet.Health);
+            Assert.NotNull(testPet.Health);
         }
 
         [Fact]
         public void GetHealth_Should_Return_Initial_Health_Level_Of_30()
         {
-            // int testPetHealth = testPet.GetHealth();
-            
-            // Assert.Equal(30, testPetHealth);
+            int testPetHealth = testPet.GetHealth(30);
+
+            Assert.Equal(30, testPetHealth);
         }
 
         [Fact]
-        public void Feed_Should_Decrease_Hunger_By_40()
+        public void Feed_Should_Decrease_Hunger_By_5()
         {
-            // testPet.Feed();
+            testPet.Feed();
 
-            // Assert.Equal(10, testPet.GetHunger());
+            Assert.Equal(45, testPet.GetHunger(5));
         }
 
         [Fact]
         public void SeeDoctor_Should_Increase_Health_By_30()
         {
-            // testPet.SeeDoctor();
+            testPet.SeeDoctor();
 
-            // Assert.Equal(60, testPet.GetHealth());
+            Assert.Equal(60, testPet.GetHealth(30));
         }
 
         [Fact]

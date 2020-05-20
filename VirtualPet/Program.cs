@@ -7,6 +7,7 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
+            Pet pet = new Pet();
             bool continuePlay = true;
             while (continuePlay)
             {
@@ -18,21 +19,30 @@ namespace VirtualPet
                 Console.WriteLine("4. Bedtime!");
                 Console.WriteLine("5. Visit the vet:");
                 Console.WriteLine("Press L to leave ");
-                
+
+                pet.GetHunger();
+
                 string userChoice = Console.ReadLine().ToLower();
-               
+
                 switch (userChoice)
                 {
                     case "v":
-                        break;
+                        { break; }
                     case "1":
-                        break;
+                        { break; }
                     case "2":
-                        break;
-                    case "l":
-                        continuePlay = false;
-                        Console.WriteLine("Dont forget to comeback and feed!");
-                        break;
+                        { break; }
+                    case "3":
+                        { break; }
+                    case "4":
+                        { break; }
+                    case "5":
+                        { break; }
+                    case "L":
+                        {
+                            continuePlay = false;
+                            Console.WriteLine("Dont forget to comeback and feed!");
+                             break; }
                     default:
                         break;
                 }
