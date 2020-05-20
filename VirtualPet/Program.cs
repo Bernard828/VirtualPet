@@ -28,17 +28,14 @@ namespace VirtualPet
                 switch (userChoice)
                 {
                     case "1":
-                        { 
-                            break; 
-                        }
+                    { 
+                        break; 
+                    }
                     case "2":
-                        {
-                            void Feed()
-                            {
-                                Feed();
-                            }
-                            break; 
-                        }
+                    {
+                        pet.Feed();
+                        break; 
+                    }
                     case "3":
                         { break; }
                     case "4":
