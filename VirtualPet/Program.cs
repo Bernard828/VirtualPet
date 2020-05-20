@@ -14,12 +14,12 @@ namespace VirtualPet
                 pet.Tick();
 
                 Console.WriteLine("Hello! Welcome to Virtual Pets\n");
-                Console.WriteLine("Enter V to visit my Pet");
                 Console.WriteLine("1. Let's make a new pet");
                 Console.WriteLine("2. Feed your animal");
                 Console.WriteLine("3. Water is always necesary.");
                 Console.WriteLine("4. Bedtime!");
                 Console.WriteLine("5. Visit the vet:");
+                Console.WriteLine("6. To visit my Pet");
                 Console.WriteLine("Press L to leave ");
 
                
@@ -27,8 +27,6 @@ namespace VirtualPet
                 string userChoice = Console.ReadLine().ToLower();
                 switch (userChoice)
                 {
-                    case "v":
-                        { break; }
                     case "1":
                         { break; }
                     case "2":
@@ -38,6 +36,8 @@ namespace VirtualPet
                     case "4":
                         { break; }
                     case "5":
+                        { break; }
+                    case "6":
                         { break; }
                     case "L":
                         {
