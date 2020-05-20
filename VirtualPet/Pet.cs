@@ -70,6 +70,10 @@ namespace VirtualPet
             return Health;
         }
 
+        public int GetThirst()
+        {
+            return Thirst;
+        }
         public void SeeDoctor()
         {
             Health += 30;
