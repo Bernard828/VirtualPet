@@ -7,9 +7,9 @@ namespace VirtualPet.Tests
     {
         private Pet testPet;
 
-            public PetTests( )
+            public PetTests()
             {
-            testPet = new Pet();
+                testPet = new Pet();
             }
 
         [Fact]
@@ -88,17 +88,17 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void Pet_Should_Have_Boredom()
+        public void Pet_Should_Have_Thirst()
         {
-            // Assert.NotNull(testPet.Boredom);
+            Assert.NotNull(testPet.Thirst);
         }
 
         [Fact]
-        public void GetBoredom_Should_Return_Initial_Boredom_Level_Of_60()
+        public void GetBoredom_Should_Return_Initial_Thirst_Level_Of_80()
         {
-            // int testPetBoredom = testPet.GetBoredom();
+            int testPetThirst = testPet.GetThirst();
 
-            // Assert.Equal(60, testPetBoredom);
+            Assert.Equal(80, testPetThirst);
         }
 
         [Fact]
@@ -134,9 +134,9 @@ namespace VirtualPet.Tests
         [Fact]
         public void Play_Should_Increase_Hunger_By_10()
         {
-            //testPet.Play();
+            testPet.Play();
 
-            //Assert.Equal(60, testPet.GetHunger(10));
+            Assert.Equal(60, testPet.GetHunger());
         }
 
         [Fact]

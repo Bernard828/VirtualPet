@@ -10,25 +10,29 @@ namespace VirtualPet
     {
        
         public string Name { get; set; }
+
         public string Species { get; set; }
+
         public int Hunger { get; set; }
+
         public int Thirst { get; set; }
+
         public int Sleepiness { get; set; }
+
         public int Health { get; set; }
         
         public Pet()
         {
             Hunger = 50;
+            Thirst = 80;
             Health = 30;
-            Thirst = 50;
             Sleepiness = 80;
-
         }
        public Pet(string name, string species)
-        {
+       {
             Name = name;
             Species = species;
-        }
+       }
 
         public void SetName(string name)
         {
@@ -55,11 +59,30 @@ namespace VirtualPet
             Hunger = hunger;
         }
 
+        public void SetThirst( int thirst)
+        {
+            Thirst = thirst;
+        }
+
+        public void SetSleepiness(int sleep)
+        {
+            Sleepiness = sleep;
+        }
+
         public void Feed()
         {
             Hunger -= 5;
         }
 
+        public void GiveWater()
+        {
+            Thirst += 5;
+        }
+        
+        public int GetThirst()
+        {
+            return Thirst;
+        }
         public int GetHunger()
         {
             return Hunger;
@@ -70,9 +93,9 @@ namespace VirtualPet
             return Health;
         }
 
-        public int GetThirst()
+        public void Play()
         {
-            return Thirst;
+            Hunger -= 10;
         }
         public void SeeDoctor()
         {
