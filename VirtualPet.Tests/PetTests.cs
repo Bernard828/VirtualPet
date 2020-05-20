@@ -82,7 +82,7 @@ namespace VirtualPet.Tests
         public void GetHunger_Should_Return_Initial_Hunger_Level_Of_50()
         {
             
-            int testPetHunger = testPet.GetHunger(50);
+            int testPetHunger = testPet.GetHunger();
 
             Assert.Equal(50, testPetHunger);
         }
@@ -110,7 +110,7 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetHealth_Should_Return_Initial_Health_Level_Of_30()
         {
-            int testPetHealth = testPet.GetHealth(30);
+            int testPetHealth = testPet.GetHealth();
 
             Assert.Equal(30, testPetHealth);
         }
@@ -120,7 +120,7 @@ namespace VirtualPet.Tests
         {
             testPet.Feed();
 
-            Assert.Equal(45, testPet.GetHunger(5));
+            Assert.Equal(45, testPet.GetHunger());
         }
 
         [Fact]
@@ -128,15 +128,15 @@ namespace VirtualPet.Tests
         {
             testPet.SeeDoctor();
 
-            Assert.Equal(60, testPet.GetHealth(30));
+            Assert.Equal(60, testPet.GetHealth());
         }
 
         [Fact]
         public void Play_Should_Increase_Hunger_By_10()
         {
-            // testPet.Play();
+            //testPet.Play();
 
-            // Assert.Equal(60, testPet.GetHunger());
+            //Assert.Equal(60, testPet.GetHunger(10));
         }
 
         [Fact]
