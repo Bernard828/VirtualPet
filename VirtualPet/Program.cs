@@ -37,7 +37,7 @@ namespace VirtualPet
                     {
 
                             Console.WriteLine($"Say Hi to {pet}");
-                            Console.WriteLine("Hunger:" ,petStats[0]);
+                            Console.WriteLine("Hunger:" + petStats[0]);
                             //Console.WriteLine($"Health: {b}");
                             //Console.WriteLine($"Thirst: {c}");
                             //Console.WriteLine($"Sleepines: {d}");

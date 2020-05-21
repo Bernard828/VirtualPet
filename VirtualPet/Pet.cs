@@ -97,7 +97,7 @@ namespace VirtualPet
         
         public void TakeNap()
         {
-            Sleepiness += 30;
+            Sleep += 30;
         }
 
         public void Play()
