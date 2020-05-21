@@ -8,6 +8,12 @@ namespace VirtualPet
         static void Main(string[] args)
         {
             Pet pet = new Pet();
+            int[] petStats = new int[4];
+            petStats[0] = 50;
+            petStats[1] = 30;
+            petStats[2] = 50;
+            petStats[3] = 80;
+
             bool continuePlay = true;
             while (continuePlay)
             {
@@ -31,7 +37,7 @@ namespace VirtualPet
                     {
 
                             Console.WriteLine($"Say Hi to {pet}");
-                            //Console.WriteLine($"Hunger: {a}");
+                            Console.WriteLine("Hunger:" ,petStats[0]);
                             //Console.WriteLine($"Health: {b}");
                             //Console.WriteLine($"Thirst: {c}");
                             //Console.WriteLine($"Sleepines: {d}");

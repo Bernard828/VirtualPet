@@ -17,7 +17,7 @@ namespace VirtualPet
 
         public int Thirst { get; set; }
 
-        public int Sleepiness { get; set; }
+        public int Sleep { get; set; }
 
         public int Health { get; set; }
         
@@ -26,7 +26,7 @@ namespace VirtualPet
             Hunger = 50;
             Thirst = 80;
             Health = 30;
-            Sleepiness = 80;
+            Sleep = 80;
         }
        public Pet(string name, string species)
        {
@@ -55,9 +55,9 @@ namespace VirtualPet
             Thirst = thirst;
         }
 
-        public void SetSleepiness(int sleep)
+        public void SetSleep(int sleep)
         {
-            Sleepiness = sleep;
+            Sleep = sleep;
         }
 
         public string GetName(string name)
