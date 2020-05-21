@@ -19,14 +19,13 @@ namespace VirtualPet
             {
                 pet.Tick();
 
-                Console.WriteLine("Hello! Welcome to Virtual Pets\n");
+                Console.WriteLine("\nHello! Welcome to Virtual Pets\n");
                 Console.WriteLine("1. To visit my Pet");
                 Console.WriteLine("2. Feed your animal");
                 Console.WriteLine("3. Water is always necesary.");
                 Console.WriteLine("4. Let your pet take a nap!");
                 Console.WriteLine("5. Visit the vet:");
-                
-                Console.WriteLine("Press L to leave ");
+                Console.WriteLine("\nPress L to leave ");
 
                
 
@@ -36,11 +35,11 @@ namespace VirtualPet
                     case "1":
                     {
 
-                            Console.WriteLine("\nSay Hi to {pet}");
-                            Console.WriteLine("\nHunger:" + petStats[0]);
-                            Console.WriteLine("\nealth:" + petStats[1]);
-                            Console.WriteLine("\nThirst:" + petStats[2]);
-                            Console.WriteLine("\nSleep" + petStats[3]);
+                            Console.WriteLine($"\nSay Hi to {pet}");
+                            Console.WriteLine("\nHunger:  " + petStats[0]);
+                            Console.WriteLine("\nHealth:  " + petStats[1]);
+                            Console.WriteLine("\nThirst:  " + petStats[2]);
+                            Console.WriteLine("\nSleep:  " + petStats[3]);
                             break; 
                     }
                     case "2":
@@ -66,7 +65,7 @@ namespace VirtualPet
                     case "l":
                     {
                         continuePlay = false;
-                        Console.WriteLine("Dont forget to comeback and feed!");
+                        Console.WriteLine("\nDont forget to comeback and feed!");
                             break; 
                     }
                     default:
