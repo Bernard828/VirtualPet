@@ -29,7 +29,19 @@ namespace VirtualPet
                 {
                     case "1":
                     {
+
                             Console.WriteLine($"Say Hi to {pet}");
+                            //Console.WriteLine($"Hunger: {a}");
+                            //Console.WriteLine($"Health: {b}");
+                            //Console.WriteLine($"Thirst: {c}");
+                            //Console.WriteLine($"Sleepines: {d}");
+                            //Convert
+                            //pet.Hunger = a;
+                            //pet.Health = b;
+                            //pet.Thirst = c;
+                            //pet.Sleepiness
+
+
                             break; 
                     }
                     case "2":
