@@ -87,7 +87,7 @@ namespace VirtualPet
  
         public void Feed()
         {
-            Hunger -= 5;
+            Hunger += 5;
         }
 
         public void GiveWater()
