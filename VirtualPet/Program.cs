@@ -8,12 +8,10 @@ namespace VirtualPet
         static void Main(string[] args)
         {
             Pet pet = new Pet();
-            int[] petStats = new int[4];
-            petStats[0] = 50; // Initial Hunger
-            petStats[1] = 30; // Initial Health
-            petStats[2] = 50; // Initial Thirst
-            petStats[3] = 80; // Initital Sleep
-
+            int hunger;
+            int thirst;
+            int sleep;
+            int health;
             bool continuePlay = true;
             while (continuePlay)
             {
@@ -36,31 +34,39 @@ namespace VirtualPet
                     {
 
                             Console.WriteLine($"\nSay Hi to {pet}");
-                            Console.WriteLine("\nHunger:  " + petStats[0]);
-                            Console.WriteLine("\nHealth:  " + petStats[1]);
-                            Console.WriteLine("\nThirst:  " + petStats[2]);
-                            Console.WriteLine("\nSleep:  " + petStats[3]);
+                            Console.WriteLine("\nHunger: "  );
+                            Console.WriteLine("\nHealth:  "  );
+                            Console.WriteLine("\nThirst:  " );
+                            Console.WriteLine("\nSleep:  " );
                             break; 
                     }
                     case "2":
                     {
                         pet.Feed();
-                        break; 
+                            Console.WriteLine("\nHunger: ");
+                            Console.WriteLine("\nThank you for feeding me!!!");
+                            break; 
                     }
                     case "3":
                     {
                         pet.GiveWater();
-                        break;
+                            Console.WriteLine("\nThirst:  ");
+                            Console.WriteLine("\nThank you! I was really thirsty!!!");
+                            break;
                     }
                     case "4":
                     {
                         pet.TakeNap();
-                        break;
+                            Console.WriteLine("\nSleep:  ");
+                            Console.WriteLine("\nGreat I get to sleep that food off now!!!!");
+                            break;
                     }
                     case "5":
                     {
-                        pet.SeeDoctor();
-                        break; 
+                            pet.SeeDoctor();
+                            Console.WriteLine("\nSleep:  " );
+                            Console.WriteLine("\nWe're lucky to have life insurance!!!");
+                            break; 
                     }
                     case "l":
                     {

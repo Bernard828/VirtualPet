@@ -60,6 +60,11 @@ namespace VirtualPet
             Sleep = sleep;
         }
 
+        public void SetHealth(int health)
+        {
+            Health = health;
+        }
+
         public string GetName(string name)
         {
             return name;
@@ -79,7 +84,7 @@ namespace VirtualPet
             return Health;
         }
         
- public string GetSpecies( string species)
+        public string GetSpecies( string species)
         {
             return species;
         }
