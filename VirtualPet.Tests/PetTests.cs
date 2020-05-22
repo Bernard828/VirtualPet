@@ -7,10 +7,10 @@ namespace VirtualPet.Tests
     {
         private Pet testPet;
 
-            public PetTests()
-            {
-                testPet = new Pet();
-            }
+        public PetTests()
+        {
+            testPet = new Pet();
+        }
 
         [Fact]
         public void Pet_Constructor_Should_Instantiate_Pet_Object()
@@ -18,11 +18,11 @@ namespace VirtualPet.Tests
             Assert.NotNull(testPet);
         }
 
-        // INSTRUCTIONS:
+        //INSTRUCTIONS:
         // Uncomment code in the test body one test at a time
-        // Add source code to eliminate the build errors (red squiggle) and pass the test
-        
-        [Fact]
+        // Add source code to eliminate the build errors(red squiggle) and pass the test
+
+       [Fact]
         public void Pet_Should_Have_Name()
         {
             testPet.Name = "Fluffy";
@@ -41,17 +41,17 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetName_Should_Get_Pet_Name_Value()
         {
-            testPet.GetName("Fido");
+            testPet.GetName();                               //testPet.GetName("Fido");
 
-            string testPetName = testPet.GetName("Fido");
+            string testPetName = testPet.GetName();         //string testPetName = testPEt.GetName("Fido");
 
-            Assert.Equal("Fido", testPetName);
+            Assert.Equal("Fido", testPetName);              //Assert.Equal("Fido", testPetName);
         }
 
         [Fact]
         public void Pet_Should_Have_Species()
         {
-             Assert.NotNull(testPet.Species);
+            Assert.NotNull(testPet.Species);
         }
 
         [Fact]
@@ -81,7 +81,7 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetHunger_Should_Return_Initial_Hunger_Level_Of_50()
         {
-            
+
             int testPetHunger = testPet.GetHunger();
 
             Assert.Equal(50, testPetHunger);
@@ -118,6 +118,8 @@ namespace VirtualPet.Tests
         [Fact]
         public void Feed_Should_Decrease_Hunger_By_5()
         {
+            testPet.GetHunger();
+
             testPet.Feed();
 
             Assert.Equal(45, testPet.GetHunger());

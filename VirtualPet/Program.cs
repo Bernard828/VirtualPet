@@ -10,13 +10,14 @@ namespace VirtualPet
         {
             Pet pet = new Pet();
             
+            
             bool continuePlay = true;
             while (continuePlay)
             {
                 pet.Tick();
 
                 Console.WriteLine("\nHello! Welcome to Virtual Pets\n");
-                Console.WriteLine("1. To visit my Pet");
+                Console.WriteLine("1. Visit/create your pet.");
                 Console.WriteLine("2. Feed your animal");
                 Console.WriteLine("3. Water is always necesary.");
                 Console.WriteLine("4. Let your pet take a nap!");
@@ -26,29 +27,30 @@ namespace VirtualPet
                
 
                 string userChoice = Console.ReadLine().ToLower();
-                switch (userChoice)
+                switch(userChoice)
                 {
                     case "1":
                     {
-
-                            Console.WriteLine($"\nSay Hi to {pet.Name} ");
-                            Console.WriteLine("\nHunger:");
-                            Console.WriteLine("\nHealth:");
-                            Console.WriteLine("\nThirst:");
-                            Console.WriteLine("\nSleep:");
-                            break; 
+                            
+                        pet.GetPetStats();
+                        Console.WriteLine($"Say Hi to {pet.GetName()}");
+                        Console.WriteLine($"Hunger: {pet.GetHunger()}");
+                        Console.WriteLine($"Health: {pet.GetHealth()}");
+                        Console.WriteLine($"Thirst: {pet.GetThirst()}");
+                        Console.WriteLine($"Sleep: {pet.GetSleep()}");
+                        break;
                     }
                     case "2":
                     {
-                        pet.Feed();
-                            Console.WriteLine("\nHunger: ", hunger);
-                            Console.WriteLine("\nThank you for feeding me!!!");
+                         Console.WriteLine($"I was extremley hungry ");
+                         pet.Feed();
+                         Console.WriteLine("\nThank you for feeding me!!!");
                             break; 
                     }
                     case "3":
                     {
                         pet.GiveWater();
-                            Console.WriteLine("\nThirst:  ");
+                            Console.WriteLine("\nThirst:");
                             Console.WriteLine("\nThank you! I was really thirsty!!!");
                             break;
                     }
