@@ -120,5 +120,13 @@ namespace VirtualPet
             Thirst += 5;
             Health -= 5;
         }
+        public void GetPetStats()
+        {
+            Console.WriteLine("\nEnter your pet's names:\t");
+            Name = Console.ReadLine();
+
+            Console.WriteLine("\nwhat is your pet's species: \t");
+            Species = Console.ReadLine();
+        }
     }
 }

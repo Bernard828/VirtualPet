@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Security.Cryptography.X509Certificates;
 
 namespace VirtualPet
 {
@@ -8,10 +9,7 @@ namespace VirtualPet
         static void Main(string[] args)
         {
             Pet pet = new Pet();
-            int hunger;
-            int thirst;
-            int sleep;
-            int health;
+            
             bool continuePlay = true;
             while (continuePlay)
             {
@@ -33,17 +31,17 @@ namespace VirtualPet
                     case "1":
                     {
 
-                            Console.WriteLine($"\nSay Hi to {pet}");
-                            Console.WriteLine("\nHunger: "  );
-                            Console.WriteLine("\nHealth:  "  );
-                            Console.WriteLine("\nThirst:  " );
-                            Console.WriteLine("\nSleep:  " );
+                            Console.WriteLine($"\nSay Hi to {pet.Name} ");
+                            Console.WriteLine("\nHunger:");
+                            Console.WriteLine("\nHealth:");
+                            Console.WriteLine("\nThirst:");
+                            Console.WriteLine("\nSleep:");
                             break; 
                     }
                     case "2":
                     {
                         pet.Feed();
-                            Console.WriteLine("\nHunger: ");
+                            Console.WriteLine("\nHunger: ", hunger);
                             Console.WriteLine("\nThank you for feeding me!!!");
                             break; 
                     }
