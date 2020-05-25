@@ -23,9 +23,9 @@ namespace VirtualPet
         
         public Pet()
         {
+            Health = 30;
             Hunger = 50;
             Thirst = 80;
-            Health = 30;
             Sleep = 80;
         }
        public Pet(string name, string species)
@@ -33,6 +33,14 @@ namespace VirtualPet
             Name = name;
             Species = species;
        }
+        public void GetPetStats()
+        {
+            Console.WriteLine("\nEnter your pet's names:\t");
+            Name = Console.ReadLine();
+
+            Console.WriteLine("\nwhat is your pet's species: \t");
+            Species = Console.ReadLine();
+        }
 
         public void SetName(string name)
         {
@@ -44,7 +52,6 @@ namespace VirtualPet
             Species = species;
         }
 
-       
         public void SetHunger(int hunger)
         {
             Hunger = hunger;
@@ -69,7 +76,11 @@ namespace VirtualPet
         {
             return Name;
         }
-        
+        public string GetSpecies( string species)
+        {
+            return species;
+        }
+                
         public int GetThirst()
         {
             return Thirst;
@@ -78,7 +89,6 @@ namespace VirtualPet
         {
             return Hunger;
         }
-
 
         public int GetSleep()
         {
@@ -89,15 +99,10 @@ namespace VirtualPet
         {
             return Health;
         }
-        
-        public string GetSpecies(string species)
-        {
-            return species;
-        }
-
- 
+  
         public void Feed()
         {
+            Hunger = 50;
             Hunger += 5;
         }
 
@@ -125,14 +130,7 @@ namespace VirtualPet
             Hunger += 5;
             Thirst += 5;
             Health -= 5;
-        }
-        public void GetPetStats()
-        {
-            Console.WriteLine("\nEnter your pet's names:\t");
-            Name = Console.ReadLine();
-
-            Console.WriteLine("\nwhat is your pet's species: \t");
-            Species = Console.ReadLine();
+            Sleep -= 5;
         }
     }
 }
