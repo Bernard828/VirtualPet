@@ -20,26 +20,30 @@ namespace VirtualPet
         public int Sleep { get; set; }
 
         public int Health { get; set; }
-        
-        public Pet()
+
+        public Pet() 
         {
-            Health = 30;
-            Hunger = 50;
-            Thirst = 80;
-            Sleep = 80;
+             Pet testPet = new Pet();
         }
-       public Pet(string name, string species)
-       {
+        
+        public Pet( string name, string species)
+        {
             Name = name;
             Species = species;
-       }
+            Health = 50;
+            Hunger = 50;
+            Thirst = 50;
+            Sleep = 50;
+        }
         public void GetPetStats()
         {
             Console.WriteLine("\nEnter your pet's names:\t");
             Name = Console.ReadLine();
 
-            Console.WriteLine("\nwhat is your pet's species: \t");
+            Console.WriteLine("\nwhat is your pet's species:\t");
             Species = Console.ReadLine();
+
+            Console.Clear();
         }
 
         public void SetName(string name)
@@ -118,7 +122,9 @@ namespace VirtualPet
 
         public void Play()
         {
-            Hunger -= 10;
+            Hunger += 10;
+            Thirst += 20;
+            Health += 10;
         }
         public void SeeDoctor()
         {
@@ -130,7 +136,7 @@ namespace VirtualPet
             Hunger += 5;
             Thirst += 5;
             Health -= 5;
-            Sleep -= 5;
+            Sleep += 5;
         }
     }
 }
