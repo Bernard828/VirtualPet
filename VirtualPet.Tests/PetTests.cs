@@ -9,13 +9,14 @@ namespace VirtualPet.Tests
 
         public PetTests()
         {
-           Pet testPet = new Pet();
+            testPet = new Pet();
         }
+        
 
         [Fact]
-        public void Pet_Constructor_Should_Instantiate_Pet_Object()
+        public  void Pet_Constructor_Should_Instantiate_Pet_Object()
         {
-            Assert.NotNull(testPet);
+           Assert.NotNull(testPet);
         }
 
         //INSTRUCTIONS:
@@ -51,6 +52,8 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Species()
         {
+            testPet.Species = "Cat";
+
             Assert.NotNull(testPet.Species);
         }
 
@@ -75,6 +78,8 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Hunger()
         {
+            testPet.Hunger = 50;
+
             Assert.NotNull(testPet.Hunger);
         }
 
@@ -90,6 +95,8 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Thirst()
         {
+            testPet.Thirst = 50;
+
             Assert.NotNull(testPet.Thirst);
         }
 
@@ -104,6 +111,7 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Health()
         {
+            
             Assert.NotNull(testPet.Health);
         }
 
@@ -118,8 +126,7 @@ namespace VirtualPet.Tests
         [Fact]
         public void Feed_Should_Decrease_Hunger_By_5()
         {
-            testPet.GetHunger();
-
+            
             testPet.Feed();
 
             Assert.Equal(45, testPet.GetHunger());
@@ -193,6 +200,7 @@ namespace VirtualPet.Tests
             testPet.Tick();
 
             Assert.Equal(45, testPet.GetHealth());
+         
         }
     }
 }

@@ -23,13 +23,16 @@ namespace VirtualPet
 
         public Pet() 
         {
-             Pet testPet = new Pet();
+             
         }
         
-        public Pet( string name, string species)
+        public Pet(string name, string species)
         {
             Name = name;
             Species = species;
+        }
+        public Pet()
+        {
             Health = 50;
             Hunger = 50;
             Thirst = 50;
