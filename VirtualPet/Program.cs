@@ -20,27 +20,44 @@ namespace VirtualPet
             {
                 Console.Clear();
                 Console.WriteLine("\nHello! Welcome to Virtual Pets\n");
-                Console.WriteLine("What is your pets name:");
-                string name = Console.ReadLine();
-                Console.WriteLine("What is your pet's species");
-                string species = Console.ReadLine();
-                Console.Clear();
+                Console.WriteLine("1. Bringing in a new pet?");
+                Console.WriteLine("2. Feed your pet(s).");
+                Console.WriteLine("3. Give your pet(s) water.");
+                Console.WriteLine("4. Your pet(s) bored, let's play");
+                Console.WriteLine("5. Time for a checkup at with the vet.");
+                Console.WriteLine("6.");
                 Console.WriteLine("Press enter to return to the Main Menu");
 
-                string userChoice = Console.ReadLine();
-                Console.Clear();
+                string userChoice = Console.ReadLine().ToLower();
+
+                switch(userChoice)
+                {
+                    case "1":
+                    Console.WriteLine("What is your pets name:");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("What is your pet's species");
+                    string species = Console.ReadLine();
+                        break;
+                    case "2.":
+                        Feed();
+                        break;
+                    case "3.":
+                        ();
+                        break;
+                    case "4.":
+                        Play();
+                        break;
+                    case "5.":
+                        SeeDoctor();
+                        break;
+                    case "6.":
+                        ();
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
-        public static string Message(string msg)
-        {
-            Console.WriteLine("Please enter your {0}: ", msg);
-            return Console.ReadLine();
-        }
-        public static void DisplayOutput(string name, string species)
-        {
-            Console.WriteLine("Your pet's name is {0}", name);
-            Console.WriteLine("Your pet's species is {0}", species);
-        }
     }
 }
