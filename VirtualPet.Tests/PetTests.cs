@@ -11,8 +11,7 @@ namespace VirtualPet.Tests
         {
             testPet = new Pet();
         }
-        
-
+       
         [Fact]
         public  void Pet_Constructor_Should_Instantiate_Pet_Object()
         {
@@ -23,10 +22,10 @@ namespace VirtualPet.Tests
         // Uncomment code in the test body one test at a time
         // Add source code to eliminate the build errors(red squiggle) and pass the test
 
-       [Fact]
+        [Fact]
         public void Pet_Should_Have_Name()
         {
-            testPet.Name = "Fluffy";
+            testPet.Name = "fluffy";
 
             Assert.NotNull(testPet.Name);
         }
@@ -42,11 +41,11 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetName_Should_Get_Pet_Name_Value()
         {
-            testPet.GetName();                               //testPet.GetName("Fido");
+            testPet.GetName();
 
-            string testPetName = testPet.GetName();         //string testPetName = testPEt.GetName("Fido");
+            string testPetName = testPet.GetName();
 
-            Assert.Equal("Fido", testPetName);              //Assert.Equal("Fido", testPetName);
+            Assert.Equal("Fido", testPetName);
         }
 
         [Fact]
@@ -68,9 +67,9 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetSpecies_Should_Get_Pet_Species_Value()
         {
-            testPet.SetSpecies("Dog");
+            testPet.GetSpecies();
 
-            string testPetSpecies = testPet.GetSpecies("Dog");
+            string testPetSpecies = testPet.GetSpecies();
 
             Assert.Equal("Dog", testPetSpecies);
         }
@@ -78,8 +77,6 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Hunger()
         {
-            testPet.Hunger = 50;
-
             Assert.NotNull(testPet.Hunger);
         }
 
@@ -95,7 +92,6 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Thirst()
         {
-            testPet.Thirst = 50;
 
             Assert.NotNull(testPet.Thirst);
         }
@@ -111,7 +107,7 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Health()
         {
-            
+
             Assert.NotNull(testPet.Health);
         }
 
@@ -126,7 +122,7 @@ namespace VirtualPet.Tests
         [Fact]
         public void Feed_Should_Decrease_Hunger_By_5()
         {
-            
+          
             testPet.Feed();
 
             Assert.Equal(45, testPet.GetHunger());
@@ -146,7 +142,7 @@ namespace VirtualPet.Tests
         public void Play_Should_Increase_Hunger_By_10()
         {
             testPet.GetHunger();
-
+            
             testPet.Play();
 
             Assert.Equal(60, testPet.GetHunger());
@@ -200,7 +196,7 @@ namespace VirtualPet.Tests
             testPet.Tick();
 
             Assert.Equal(45, testPet.GetHealth());
-         
+
         }
     }
 }
