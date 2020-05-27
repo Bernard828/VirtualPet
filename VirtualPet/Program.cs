@@ -8,14 +8,13 @@ namespace VirtualPet
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            //string name = Message("name");
-            //string species = Message("species type");
-            //DisplayOutput(name, species);
-
+            PetShelter petShelter;
 
             bool stillPlaying = true;
+            Pet newPet = new Pet();
+
             while (stillPlaying)
             {
                 Console.Clear();
@@ -25,33 +24,41 @@ namespace VirtualPet
                 Console.WriteLine("3. Give your pet(s) water.");
                 Console.WriteLine("4. Your pet(s) bored, let's play");
                 Console.WriteLine("5. Time for a checkup at with the vet.");
-                Console.WriteLine("6.");
+                Console.WriteLine("6. Adopt a pet!");
                 Console.WriteLine("Press enter to return to the Main Menu");
 
                 string userChoice = Console.ReadLine().ToLower();
 
-                switch(userChoice)
+            
+                switch (userChoice)
                 {
                     case "1":
-                    Console.WriteLine("What is your pets name:");
-                    string name = Console.ReadLine();
-                    Console.WriteLine("What is your pet's species");
-                    string species = Console.ReadLine();
+                        newPet = new Pet();                         
+                        Console.WriteLine("Waht is your pet's name?");
+                        string name = Console.ReadLine();
+                        newPet.SetName(name);
+
+                        Console.WriteLine("Whats the species of your animal");
+                        string specie = Console.ReadLine();
+                        newPet.SetName(specie);                    
                         break;
+
                     case "2.":
-                        Feed();
+                        newPet.Feed();
                         break;
+
                     case "3.":
-                        ();
+                      //  newPet.GiveWater();
                         break;
                     case "4.":
-                        Play();
+                       newPet.Play();
                         break;
                     case "5.":
-                        SeeDoctor();
+                        newPet.SeeDoctor();
                         break;
                     case "6.":
-                        ();
+
+                      Console.WriteLine($" I know you'll give him a good home!");
                         break;
                     default:
                         break;

@@ -53,7 +53,7 @@ namespace VirtualPet.Tests
         {
             testPet.Species = "Cat";
 
-            Assert.NotNull(testPet.Species);
+            Assert.NotNull(testPet.GetSpecies());
         }
 
         [Fact]
@@ -61,7 +61,7 @@ namespace VirtualPet.Tests
         {
             testPet.SetSpecies("Cat");
 
-            Assert.Equal("Cat", testPet.Species);
+            Assert.Equal("Cat", testPet.GetSpecies());
         }
 
         [Fact]
@@ -77,7 +77,7 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Hunger()
         {
-            Assert.NotNull(testPet.Hunger);
+            Assert.NotNull(testPet.GetHunger()); 
         }
 
         [Fact]

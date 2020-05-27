@@ -8,20 +8,15 @@ namespace VirtualPet
 {
     public class Pet
     {
-        public Pet(string Name)
-        {
-            Name = "";
-        }
 
-        private string testPet;
-        private string name;
-        private string species;
-        private int hunger;
-        private int thirst;
-        private int boredom;
-        private int health;
+        //private string name;
+        //private string species;
+        //private int hunger;
+        //private int thirst;
+        //private int boredom;
+        //private int health;
 
-        public string TestPet { get; set; }
+
         public string Name { get; set; }
         public string Species { get; set; }
         public int Hunger { get; set; }
@@ -29,55 +24,89 @@ namespace VirtualPet
         public int Boredom { get; set; }
         public int Health { get; set; }
 
+
+
+        public Pet()
+        {
+
+        }
+        public Pet(string newPetName)
+        {
+            this.Name = newPetName;
+        }
+
+
         public void SetName(string petName)
-        { Name = petName; }
+        { 
+            Name = petName; 
+        }
 
         public void SetSpecies(string petSpecies)
-        { Species = petSpecies; }
+        { 
+            Species = petSpecies; 
+        }
 
         public string GetName()
         { 
-            return name;
+            return Name;
         }
 
         public string GetSpecies()
         {
-            return species;
+            return Species;
         }
 
         public int GetHunger()
         {
-            return hunger;
+            return Hunger;
         }
 
         public int GetThirst()
         {
-            return thirst;
+            return Thirst;
         }
 
         public int GetHealth()
         {
-            return health;
+            return Health;
         }
-
+        
+        public int GetBoredom()
+        {
+            return Boredom;
+        }
+        
+        public void GiveWater()
+        {
+            Thirst += 5;
+        }
         public void Feed()
-        { Hunger -= 5; }
+        { this.Hunger -= 5; }
 
         public void SeeDoctor()
-        { Health += 30; }
+        { this.Health += 30; }
 
         public void Play()
         { 
-            Hunger += 10;
-            Thirst += 20;
-            Health += 10;
+            this.Hunger += 10; // hunger = hunger + 10
+            this.Thirst += 20;
+            this.Health += 10;
+            this.Boredom -= 10;
         }
-
         public void Tick()
         {
-            Hunger += 5;
-            Thirst += 5;
-            Health -= 5;
+            this.Hunger += 5;
+            this.Thirst += 5;
+            this.Health -= 5;
+        }
+
+        public void PrintEachPetsStats()
+        {
+            Console.WriteLine($"Pet: {Name}");
+            Console.WriteLine($"Hunger: {Hunger}");
+            Console.WriteLine($"Thirst: {Thirst}");
+            Console.WriteLine($"Health: {Health}");
+            Console.WriteLine($"Boredom: {Boredom}");
         }
     }
 }
