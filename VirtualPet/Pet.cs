@@ -30,24 +30,27 @@ namespace VirtualPet
         {
 
         }
-        public Pet(string newPetName)
+        public Pet(string name)
         {
-            this.Name = newPetName;
+            Name = name;
         }
 
-
         public void SetName(string petName)
-        { 
-            Name = petName; 
+        {
+            Name = petName;
         }
 
         public void SetSpecies(string petSpecies)
-        { 
-            Species = petSpecies; 
+        {
+            Species = petSpecies;
         }
-
+        public void SetHunger()
+        {
+            Hunger = 50;
+        }
+        
         public string GetName()
-        { 
+        {
             return Name;
         }
 
@@ -70,12 +73,18 @@ namespace VirtualPet
         {
             return Health;
         }
-        
+
         public int GetBoredom()
         {
             return Boredom;
         }
-        
+        public int PetStats()
+        {
+            Hunger = 50;
+            Thirst = 50;
+            Boredom = 50;
+            Health = 50;
+        }
         public void GiveWater()
         {
             Thirst += 5;
@@ -87,7 +96,7 @@ namespace VirtualPet
         { this.Health += 30; }
 
         public void Play()
-        { 
+        {
             this.Hunger += 10; // hunger = hunger + 10
             this.Thirst += 20;
             this.Health += 10;
@@ -95,19 +104,45 @@ namespace VirtualPet
         }
         public void Tick()
         {
-            this.Hunger += 5;
-            this.Thirst += 5;
-            this.Health -= 5;
+            Hunger += 5;
+            Thirst += 5;
+            Health -= 5;
         }
 
         public void PrintEachPetsStats()
         {
+            
             Console.WriteLine($"Pet: {Name}");
             Console.WriteLine($"Hunger: {Hunger}");
             Console.WriteLine($"Thirst: {Thirst}");
             Console.WriteLine($"Health: {Health}");
             Console.WriteLine($"Boredom: {Boredom}");
         }
+        //petTest.cs
+        //public void RemoveDeadPEt()
+        //{
+        //  List<PEt> deadPEtList = new List <Pet>();
+        //    foreach(Pet pet in PetShelterList)
+        //    {
+        //    bool IsDead =  pet.CheckPetDead()
+        //    if (ISDead)
+        //    {
+       //         deadPetList.Add(pet)
+                  //  cwl $"{pet.GetName} is dead!
+        //        RemovePEtFromList(pet);
+        //    }
+        //    }
+        //}
+        ////pet.cs
+        //public bool CheckIfDeadPet()
+        //{
+        //    if (Hunger >= 100)
+        //    {
+        //        return  true;
+        //    }
+        //    return false;
+            
+       // }
     }
 }
 

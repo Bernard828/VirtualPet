@@ -9,7 +9,7 @@ namespace VirtualPet
         public List<Pet> myPets = new List<Pet>();
 
 
-        ///This is a constructor, because the public "PetShelter" is the same asa hte class name and has no return type... The constructor will return an instance of this class
+        ///This is a constructor, because the public "PetShelter" is the same asa the class name and has no return type... The constructor will return an instance of this class
         public PetShelter()
         {
             //This will automatically add the first pet
@@ -25,10 +25,10 @@ namespace VirtualPet
         
         public void RemovePet()
         {
-           
+            myPets.Remove(pet);
         }
         
-        public void PrntPetStats()
+        public void PrintPetStats()
         {
             Console.WriteLine("List of pets in this shelter");
             foreach (Pet pet in myPets)

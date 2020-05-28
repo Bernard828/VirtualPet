@@ -21,15 +21,19 @@ namespace VirtualPet.Tests
             myShelter.AddPet(newPet);
 
             int newPetCount = myShelter.myPets.Count;
-
-
-            //Count should be original plus 1
-
-            //Assert.Single(sut, ShelterList);
-
-
-
         }
+        public void RemovePet_Removes_Pet_From_List()
+        {
+            Pet pet = new Pet();
+
+            sut.RemovePet(pet);
+
+            Assert.DoesNotContain(Pet, sut.PetShelterList);
+        }
+
+        //Count should be original plus 1
+
+        //Assert.Single(sut, ShelterList);
         //[Fact]
         //public void FindPetStatSheetInList_ShouldReturnCurrentPetStats()
         //{
