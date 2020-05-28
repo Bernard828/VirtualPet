@@ -71,7 +71,7 @@ namespace VirtualPet
                         break;
                     case "7.":
                         Console.WriteLine("Who do you want to take home with you!");
-                        myPets.RemovePet() = Convert.ToInt32(Console.ReadLine());
+                        int numberForPet = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine($" I know you'll give him a good home!");
                         break;
                     default:

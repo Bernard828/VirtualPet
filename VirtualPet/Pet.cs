@@ -28,7 +28,10 @@ namespace VirtualPet
 
         public Pet()
         {
-
+            Hunger = 50;
+            Thirst = 50;
+            Boredom = 50;
+            Health = 50;
         }
         public Pet(string name)
         {
@@ -78,13 +81,15 @@ namespace VirtualPet
         {
             return Boredom;
         }
-        public int PetStats()
-        {
-            Hunger = 50;
-            Thirst = 50;
-            Boredom = 50;
-            Health = 50;
-        }
+
+        //public void PetStats()
+        //{
+        //    Console.WriteLine($"Hunger: {Hunger}");
+        //    Console.WriteLine($"Thirst: {Thirst}");
+        //    Console.WriteLine($"Boredpm: {Boredom}");
+        //    Console.WriteLine($"Health: {Health}");
+            
+        //}
         public void GiveWater()
         {
             Thirst += 5;

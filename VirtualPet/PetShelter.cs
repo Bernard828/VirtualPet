@@ -25,7 +25,7 @@ namespace VirtualPet
         
         public void RemovePet()
         {
-            myPets.Remove(pet);
+   //         myPets.Remove(pet);
         }
         
         public void PrintPetStats()
