@@ -19,17 +19,17 @@ namespace VirtualPet
 
             while (stillPlaying)
             {
-                Console.WriteLine("\nHello! Welcome to Virtual Pets\n");
-                Console.WriteLine("1. Bringing in a new pet?");
-                Console.WriteLine("2. View list of pets."); 
-                Console.WriteLine("3. Select a certain pet.");
-                Console.WriteLine("4. Feed your pet(s).");
-                Console.WriteLine("5. Give your pet(s) water.");
-                Console.WriteLine("6. Your pet(s) bored, let's play.");
-                Console.WriteLine("7. Time for a checkup with the vet.");
-                Console.WriteLine("8. Adopt a pet!");
-                Console.WriteLine("\n Press 'Q' to Exit game.");
-                Console.WriteLine("Press enter to return to the Main Menu\n");
+                Console.WriteLine("\n\tHello! Welcome to Virtual Pets\n");
+                Console.WriteLine("\t1. Bringing in a new pet?");
+                Console.WriteLine("\t2. View list of pets."); 
+                Console.WriteLine("\t3. Select a certain pet.");
+                Console.WriteLine("\t4. Feed your pet(s).");
+                Console.WriteLine("\t5. Give your pet(s) water.");
+                Console.WriteLine("\t6. Your pet(s) bored, let's play.");
+                Console.WriteLine("\t7. Time for a checkup with the vet.");
+                Console.WriteLine("\t8. Adopt a pet!");
+                Console.WriteLine("\n\t Press 'Q' to Exit game.");
+                Console.WriteLine("\tPress enter to return to the Main Menu\n");
 
                 string userChoice = Console.ReadLine().ToLower();
                 
@@ -54,13 +54,13 @@ namespace VirtualPet
 
                     case "3":
 
-                        myShelter.PrintPetStats();
+                        
 
                         break;
 
                     case "4":
 
-                        Console.WriteLine("Press '1'feed one pet, press '2' fedd all pets.");
+                        Console.WriteLine("\tPress '1'feed one pet, press '2' fedd all pets.");
                        
                         string feedChoice = Console.ReadLine();
 
@@ -84,7 +84,7 @@ namespace VirtualPet
                         break;
 
                     case "5":
-                        Console.WriteLine($"You gave {newPet.GetName()} some water");
+                        Console.WriteLine($"\tYou gave {newPet.GetName()} some water");
 
                         newPet.GiveWater();
 
@@ -92,25 +92,25 @@ namespace VirtualPet
 
                     case "6":
 
-                        Console.WriteLine($"{newPet.GetName()} enjoyed the exercise.");
+                        Console.WriteLine($"\t{newPet.GetName()} enjoyed the exercise.");
 
                         newPet.Play();
 
                         break;
                     case "7":
 
-                        Console.WriteLine($" {newPet.GetName()} is feeling much better.");
+                        Console.WriteLine($"\t {newPet.GetName()} is feeling much better.");
 
                         newPet.SeeDoctor();
 
                         break;
                     case "8":
 
-                        Console.WriteLine("Who do you want to take home with you!");
+                        Console.WriteLine("\tWho do you want to take home with you!");
 
                         int numberForPet = Convert.ToInt32(Console.ReadLine());
 
-                        Console.WriteLine($" I know you'll give him a good home!");
+                        Console.WriteLine($"\tI know you'll give him a good home!");
 
                         break;
 

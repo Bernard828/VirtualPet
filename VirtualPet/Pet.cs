@@ -107,10 +107,10 @@ namespace VirtualPet
         {
             
             Console.WriteLine($"Pet: {Name}");
+            Console.WriteLine($"Boredom: {Boredom}");
             Console.WriteLine($"Hunger: {Hunger}");
             Console.WriteLine($"Thirst: {Thirst}");
             Console.WriteLine($"Health: {Health}");
-            Console.WriteLine($"Boredom: {Boredom}");
         }
          public void CreatePet()
         {
