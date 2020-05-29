@@ -120,20 +120,19 @@ namespace VirtualPet.Tests
         [Fact]
         public void Feed_Should_Decrease_Hunger_By_5()
         {
-
             testPet.Feed();
 
-            Assert.Equal(50, testPet.GetHunger());
+            Assert.Equal(55, testPet.GetHunger());
         }
 
         [Fact]
         public void GiveWater_Should_Decrease_Thirst_By_5()
         {
-
             testPet.GiveWater();
 
-            Assert.Equal(45, testPet.GetThirst());
+            Assert.Equal(55, testPet.GetThirst());
         }
+
         [Fact]
         public void SeeDoctor_Should_Increase_Health_By_30()
         {

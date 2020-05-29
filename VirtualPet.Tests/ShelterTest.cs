@@ -7,20 +7,18 @@ namespace VirtualPet.Tests
 {
     public class ShelterTests
     {
-
-
         PetShelter myShelter = new PetShelter();
 
         [Fact]
         public void AddPet_Should_Include_List_Count_By1()
         {
-
-            int petCount = myShelter.myPets.Count;
+           int petCount = myShelter.allPets.Count;
 
             Pet newPet = new Pet("second pet");
+
             myShelter.AddPet(newPet);
 
-            int newPetCount = myShelter.myPets.Count;
+            int newPetCount = myShelter.allPets.Count;
         }
         //public void RemovePet_Removes_Pet_From_List()
         //{

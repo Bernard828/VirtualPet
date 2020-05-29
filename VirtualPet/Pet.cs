@@ -8,23 +8,12 @@ namespace VirtualPet
 {
     public class Pet
     {
-
-        //private string name;
-        //private string species;
-        //private int hunger;
-        //private int thirst;
-        //private int boredom;
-        //private int health;
-
-
         public string Name { get; set; }
         public string Species { get; set; }
         public int Hunger { get; set; }
         public int Thirst { get; set; }
         public int Boredom { get; set; }
         public int Health { get; set; }
-
-
 
         public Pet()
         {
@@ -81,31 +70,31 @@ namespace VirtualPet
         {
             return Boredom;
         }
-
-        //public void PetStats()
-        //{
-        //    Console.WriteLine($"Hunger: {Hunger}");
-        //    Console.WriteLine($"Thirst: {Thirst}");
-        //    Console.WriteLine($"Boredpm: {Boredom}");
-        //    Console.WriteLine($"Health: {Health}");
-            
-        //}
         public void GiveWater()
         {
             Thirst += 5;
+            Console.WriteLine($"You gave {Name} some water. Thirst: {Thirst}");
         }
         public void Feed()
-        { this.Hunger -= 5; }
+        {
+            this.Hunger += 5;
+            Console.WriteLine($"You fed {Name} now. Hunger: {Hunger}");
+        }
 
         public void SeeDoctor()
-        { this.Health += 30; }
+        { 
+            this.Health += 30;
+            Console.WriteLine($"{Name} is feeling much better! Health: {Health}");
+        }
 
         public void Play()
         {
-            this.Hunger += 10; // hunger = hunger + 10
+            this.Hunger += 10; 
             this.Thirst += 20;
             this.Health += 10;
             this.Boredom -= 10;
+            Console.WriteLine($"\n{Name}: 'That was fun!' " +
+                $"Hunger:{Hunger}| Thirst:{Thirst}| Health:{Health}| Boredom:{Boredom}");
         }
         public void Tick()
         {
@@ -114,7 +103,7 @@ namespace VirtualPet
             Health -= 5;
         }
 
-        public void PrintEachPetsStats()
+        public void PrintThisPetStats()
         {
             
             Console.WriteLine($"Pet: {Name}");
@@ -123,31 +112,20 @@ namespace VirtualPet
             Console.WriteLine($"Health: {Health}");
             Console.WriteLine($"Boredom: {Boredom}");
         }
-        //petTest.cs
-        //public void RemoveDeadPEt()
-        //{
-        //  List<PEt> deadPEtList = new List <Pet>();
-        //    foreach(Pet pet in PetShelterList)
-        //    {
-        //    bool IsDead =  pet.CheckPetDead()
-        //    if (ISDead)
-        //    {
-       //         deadPetList.Add(pet)
-                  //  cwl $"{pet.GetName} is dead!
-        //        RemovePEtFromList(pet);
-        //    }
-        //    }
-        //}
-        ////pet.cs
-        //public bool CheckIfDeadPet()
-        //{
-        //    if (Hunger >= 100)
-        //    {
-        //        return  true;
-        //    }
-        //    return false;
-            
-       // }
+         public void CreatePet()
+        {
+            Console.WriteLine("\nWhat's the animal's name?");
+
+            string name = Console.ReadLine();
+
+            SetName(name);
+
+            Console.WriteLine("\nWhat type of animal?");
+
+            string species = Console.ReadLine();
+
+           SetSpecies(species);
+        }
     }
 }
 

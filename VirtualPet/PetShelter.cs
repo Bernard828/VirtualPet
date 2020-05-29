@@ -6,34 +6,60 @@ namespace VirtualPet
 {
     public class PetShelter
     {
-        public List<Pet> myPets = new List<Pet>();
-
-
-        ///This is a constructor, because the public "PetShelter" is the same asa the class name and has no return type... The constructor will return an instance of this class
-        public PetShelter()
-        {
-            //This will automatically add the first pet
-            Pet newPet = new Pet("Fido");
-            myPets.Add(newPet);
-
-        }
+        public List<Pet> allPets = new List<Pet>();
 
         public void AddPet(Pet pet)
         {
-            myPets.Add(pet);
+            allPets.Add(pet);
         }
         
-        public void RemovePet()
+        public void RemovePet(Pet pet)
         {
-   //         myPets.Remove(pet);
+         allPets.Remove(pet);
         }
         
         public void PrintPetStats()
         {
             Console.WriteLine("List of pets in this shelter");
-            foreach (Pet pet in myPets)
+
+            foreach (Pet pet in allPets)
             {
-              pet.PrintEachPetsStats();
+                Console.WriteLine("\n");
+              pet.PrintThisPetStats();
+            }
+        }
+
+        public void FeedAll()
+        {
+            foreach( Pet pet in allPets)
+            {
+                pet.Feed();
+                Console.WriteLine("You fed all of your pet!");
+            }            
+        }
+
+        public void WaterAll()
+        {
+            foreach (Pet pet in allPets)
+            {
+                pet.GiveWater();
+                Console.WriteLine("You gave all of your pets water!");
+            }
+        }
+
+        public void SeeDoctorAll()
+        {
+            foreach (Pet pet in allPets)
+            {
+                pet.SeeDoctor();
+            }
+        }
+
+        public void PlayWithAll()
+        {
+            foreach (Pet pet in allPets)
+            {
+                pet.Play();
             }
         }
     }
