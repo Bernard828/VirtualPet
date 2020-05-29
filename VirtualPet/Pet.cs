@@ -90,9 +90,15 @@ namespace VirtualPet
         public void Play()
         {
             this.Hunger += 10; 
+
             this.Thirst += 20;
+
             this.Health += 10;
+
             this.Boredom -= 10;
+
+            Console.WriteLine($"\t{Name} enjoyed the exercise.");
+
             Console.WriteLine($"\n\t{Name}: 'That was fun!' " +
                 $"\tHunger:{Hunger}| Thirst:{Thirst}| Health:{Health}| Boredom:{Boredom}");
         }

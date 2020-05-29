@@ -84,33 +84,28 @@ namespace VirtualPet
                         break;
 
                     case "5":
-                        Console.WriteLine($"\tYou gave {newPet.GetName()} some water");
-
+                        
                         newPet.GiveWater();
 
                         break;
 
                     case "6":
 
-                        Console.WriteLine($"\t{newPet.GetName()} enjoyed the exercise.");
-
-                        newPet.Play();
+                       newPet.Play();
 
                         break;
                     case "7":
-
-                        Console.WriteLine($"\t {newPet.GetName()} is feeling much better.");
 
                         newPet.SeeDoctor();
 
                         break;
                     case "8":
 
-                        Console.WriteLine("\tWho do you want to take home with you!");
+                        Console.WriteLine("\tWho do you want to adopt?");
 
                         int numberForPet = Convert.ToInt32(Console.ReadLine());
 
-                        Console.WriteLine($"\tI know you'll give him a good home!");
+                        Console.WriteLine($"\tI know you'll give {myShelter.AddPet()} a good home!");
 
                         break;
 

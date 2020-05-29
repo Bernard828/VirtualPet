@@ -6,7 +6,14 @@ namespace VirtualPet
 {
     public class PetShelter
     {
+       
         public List<Pet> allPets = new List<Pet>();
+        
+        allPets.Add();
+
+        Console.WriteLine(allPets.Contains(null));
+
+        private object indexPetName;
 
         public void AddPet(Pet pet)
         {
@@ -61,6 +68,11 @@ namespace VirtualPet
             {
                 pet.Play();
             }
+        }
+
+        internal object AddPet()
+        {
+            return indexPetName;
         }
     }
 }
