@@ -9,17 +9,21 @@ namespace VirtualPet
        
         public List<Pet> allPets = new List<Pet>();
         
-        allPets.Add();
-
-        Console.WriteLine(allPets.Contains(null));
-
-        private object indexPetName;
+       private object indexPetName;
 
         public void AddPet(Pet pet)
         {
+            //int[] = allPets.Contains(pet);
+
             allPets.Add(pet);
+
+            Console.WriteLine(allPets.Contains(pet));
         }
-        
+
+        internal object AddPet()
+        {
+            return indexPetName;
+        }
         public void RemovePet(Pet pet)
         {
          allPets.Remove(pet);
@@ -70,9 +74,5 @@ namespace VirtualPet
             }
         }
 
-        internal object AddPet()
-        {
-            return indexPetName;
-        }
     }
 }
