@@ -20,7 +20,7 @@ namespace VirtualPet
         
         public void PrintPetStats()
         {
-            Console.WriteLine("\nList of pets in this shelter");
+            Console.WriteLine("\n\tList of pets in this shelter");
 
             foreach (Pet pet in allPets)
             {
@@ -34,7 +34,7 @@ namespace VirtualPet
             foreach( Pet pet in allPets)
             {
                 pet.Feed();
-                Console.WriteLine("\nYou fed all of your pet!");
+                Console.WriteLine("\n\tYou fed all of your pet!");
             }            
         }
 
@@ -43,7 +43,7 @@ namespace VirtualPet
             foreach (Pet pet in allPets)
             {
                 pet.GiveWater();
-                Console.WriteLine("\nYou gave all of your pets water!");
+                Console.WriteLine("\n\tYou gave all of your pets water!");
             }
         }
 
