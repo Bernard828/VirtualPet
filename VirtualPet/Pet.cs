@@ -73,18 +73,18 @@ namespace VirtualPet
         public void GiveWater()
         {
             Thirst += 5;
-            Console.WriteLine($"You gave {Name} some water. Thirst: {Thirst}");
+            Console.WriteLine($"\tYou gave {Name} some water. Thirst: {Thirst}");
         }
         public void Feed()
         {
             this.Hunger += 5;
-            Console.WriteLine($"You fed {Name} now. Hunger: {Hunger}");
+            Console.WriteLine($"\tYou fed {Name} now. Hunger: {Hunger}");
         }
 
         public void SeeDoctor()
         { 
             this.Health += 30;
-            Console.WriteLine($"{Name} is feeling much better! Health: {Health}");
+            Console.WriteLine($"\t{Name} is feeling much better! Health: {Health}");
         }
 
         public void Play()
@@ -93,8 +93,8 @@ namespace VirtualPet
             this.Thirst += 20;
             this.Health += 10;
             this.Boredom -= 10;
-            Console.WriteLine($"\n{Name}: 'That was fun!' " +
-                $"Hunger:{Hunger}| Thirst:{Thirst}| Health:{Health}| Boredom:{Boredom}");
+            Console.WriteLine($"\n\t{Name}: 'That was fun!' " +
+                $"\tHunger:{Hunger}| Thirst:{Thirst}| Health:{Health}| Boredom:{Boredom}");
         }
         public void Tick()
         {
@@ -106,21 +106,21 @@ namespace VirtualPet
         public void PrintThisPetStats()
         {
             
-            Console.WriteLine($"Pet: {Name}");
-            Console.WriteLine($"Boredom: {Boredom}");
-            Console.WriteLine($"Hunger: {Hunger}");
-            Console.WriteLine($"Thirst: {Thirst}");
-            Console.WriteLine($"Health: {Health}");
+            Console.WriteLine($"\tPet: {Name}");
+            Console.WriteLine($"\tBoredom: {Boredom}");
+            Console.WriteLine($"\tHunger: {Hunger}");
+            Console.WriteLine($"\tThirst: {Thirst}");
+            Console.WriteLine($"\tHealth: {Health}");
         }
          public void CreatePet()
         {
-            Console.WriteLine("\nWhat's the animal's name?");
+            Console.WriteLine("\n\tWhat's the animal's name?");
 
             string name = Console.ReadLine();
 
             SetName(name);
 
-            Console.WriteLine("\nWhat type of animal?");
+            Console.WriteLine("\n\tWhat type of animal?");
 
             string species = Console.ReadLine();
 
