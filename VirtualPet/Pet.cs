@@ -9,6 +9,7 @@ namespace VirtualPet
     public class Pet
     {
         public string Name { get; set; }
+        public bool PetType { get; set; }
         public string Species { get; set; }
         public int Hunger { get; set; }
         public int Thirst { get; set; }
@@ -40,13 +41,13 @@ namespace VirtualPet
         {
             Hunger = 50;
         }
-        
-        public string GetName()
+
+        public  virtual string GetName()
         {
             return Name;
         }
 
-        public string GetSpecies()
+        public virtual string GetSpecies()
         {
             return Species;
         }
@@ -55,7 +56,6 @@ namespace VirtualPet
         {
             return Hunger;
         }
-
         public int GetThirst()
         {
             return Thirst;
@@ -70,6 +70,20 @@ namespace VirtualPet
         {
             return Boredom;
         }
+        public void CreatePet()
+        {
+            Console.WriteLine("\n\tWhat's the animal's name?");
+
+            string name = Console.ReadLine();
+
+            SetName(name);
+
+            Console.WriteLine("\n\tWhat type of animal?");
+
+            string species = Console.ReadLine();
+
+            SetSpecies(species);
+        }
         public void GiveWater()
         {
             Thirst += 5;
@@ -82,14 +96,15 @@ namespace VirtualPet
         }
 
         public void SeeDoctor()
-        { 
+        {
             this.Health += 30;
             Console.WriteLine($"\t{Name} is feeling much better! Health: {Health}");
         }
 
+
         public void Play()
         {
-            this.Hunger += 10; 
+            this.Hunger += 10;
 
             this.Thirst += 20;
 
@@ -111,26 +126,12 @@ namespace VirtualPet
 
         public void PrintThisPetStats()
         {
-            
+
             Console.WriteLine($"\tPet: {Name}");
             Console.WriteLine($"\tBoredom: {Boredom}");
             Console.WriteLine($"\tHunger: {Hunger}");
             Console.WriteLine($"\tThirst: {Thirst}");
             Console.WriteLine($"\tHealth: {Health}");
-        }
-         public void CreatePet()
-        {
-            Console.WriteLine("\n\tWhat's the animal's name?");
-
-            string name = Console.ReadLine();
-
-            SetName(name);
-
-            Console.WriteLine("\n\tWhat type of animal?");
-
-            string species = Console.ReadLine();
-
-           SetSpecies(species);
         }
     }
 }
