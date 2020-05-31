@@ -15,6 +15,7 @@ namespace VirtualPet
 
             Pet newPet = new Pet();
 
+            
             bool stillPlaying = true;
 
             while (stillPlaying)

@@ -8,7 +8,7 @@ namespace VirtualPet
 {
     public class Pet
     {
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
         public bool PetType { get; set; }
         public string Species { get; set; }
         public int Hunger { get; set; }

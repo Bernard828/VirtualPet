@@ -6,7 +6,7 @@ namespace VirtualPet
 {
     class OrganicPet : Pet
     {
-        public string Name { get; set; }
+        public override string Name { get; set; }
         public bool PetType { get; set; }
         public string Species { get; set; }
         public int Hunger { get; set; }
@@ -22,22 +22,22 @@ namespace VirtualPet
             Health = 50;
         }
 
-        public OrganicPet (string name)
+        public OrganicPet (string organicname)
         {
-            Name = name;
+            base.Name = organicname;
         }
 
         public void SetName(string organicName)
         {
-            Name = Name;
+            base.Name = base.Name;
         }
         public void SetSpecies(string organicSpecies)
         {
-            organicSpecies = organicSpecies;
+            Species = organicSpecies;
         }
         public override string GetName()
         {
-            return Name;
+            return base.Name;
         }
         public override string GetSpecies()
         {
