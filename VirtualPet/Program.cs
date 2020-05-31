@@ -14,7 +14,6 @@ namespace VirtualPet
             PetShelter myShelter = new PetShelter();
 
             Pet newPet = new Pet();
-
             
             bool stillPlaying = true;
 
@@ -55,13 +54,13 @@ namespace VirtualPet
 
                     case "3":
 
-                        
+                        myShelter.SpecificPet();
 
                         break;
 
                     case "4":
 
-                        Console.WriteLine("\tPress '1'feed one pet, press '2' fedd all pets.");
+                        Console.WriteLine("\tPress '1'feed one pet, press '2' feed all pets.");
                        
                         string feedChoice = Console.ReadLine();
 
@@ -85,9 +84,28 @@ namespace VirtualPet
                         break;
 
                     case "5":
-                        
-                        newPet.GiveWater();
+                        Console.WriteLine("\tPress '1' to quench one pet's thirst , press '2' for all pets.");
 
+                        string thirstChoice = Console.ReadLine();
+
+                        switch (thirstChoice)
+                        {
+                            case "1":
+
+                                newPet.GiveWater();
+
+
+                                break;
+
+                            case "2":
+
+                                myShelter.FeedAll();
+
+                                break;
+
+                            default:
+                                break;
+                        }
                         break;
 
                     case "6":
