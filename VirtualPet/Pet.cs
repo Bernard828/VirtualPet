@@ -37,10 +37,6 @@ namespace VirtualPet
         {
             Species = petSpecies;
         }
-        public void SetHunger()
-        {
-            Hunger = 50;
-        }
 
         public virtual string GetName()
         {
@@ -84,7 +80,7 @@ namespace VirtualPet
 
             SetSpecies(species);
         }
-        
+
         public void GiveWater()
         {
             Thirst += 5;
@@ -128,7 +124,8 @@ namespace VirtualPet
         public void PrintThisPetStats()
         {
 
-            Console.WriteLine($"\tPet:{Name} | Boredom: {Boredom} | Hunger: {Hunger}| Thirst: {Thirst}| Health: { Health}");
+            Console.WriteLine($"\t Pet:{Name} | Species:{Species}| Boredom:{Boredom} | Hunger:{Hunger}| Thirst:{Thirst}| Health:{ Health  }");
+
         }
     }
 }

@@ -6,27 +6,23 @@ namespace VirtualPet
 {
     public class PetShelter
     {
-       
-        public List<Pet> allPets = new List<Pet>();
-        
-       private object indexPetName;
-
-        public void AddPet(Pet pet)
-        {
+       public List<Pet> allPetsList = new List<Pet>();
+                
+       public void AddPet(Pet pet)
+       {
             //int[] = allPets.Contains(pet);
 
-            allPets.Add(pet);
+            allPetsList.Add(pet);
 
-            Console.WriteLine(allPets.Contains(pet));
-        }
+       }
 
-        internal object AddPet()
-        {
-            return indexPetName;
-        }
+        //internal object AddPet()
+        //{
+        //    return indexPetName;
+        //}
         public void RemovePet(Pet pet)
         {
-         allPets.Remove(pet);
+         allPetsList.Remove(pet);
         }
         public void SpecificPet()
         {
@@ -36,7 +32,7 @@ namespace VirtualPet
         {
             Console.WriteLine("\n\tList of pets in this shelter");
 
-            foreach (Pet pet in allPets)
+            foreach (Pet pet in allPetsList)
             {
                 Console.WriteLine("\n");
               pet.PrintThisPetStats();
@@ -45,7 +41,7 @@ namespace VirtualPet
 
         public void FeedAll()
         {
-            foreach( Pet pet in allPets)
+            foreach( Pet pet in allPetsList)
             {
                 pet.Feed();
             }            
@@ -53,7 +49,7 @@ namespace VirtualPet
 
         public void WaterAll()
         {
-            foreach (Pet pet in allPets)
+            foreach (Pet pet in allPetsList)
             {
                 pet.GiveWater();
             }
@@ -61,7 +57,7 @@ namespace VirtualPet
 
         public void SeeDoctorAll()
         {
-            foreach (Pet pet in allPets)
+            foreach (Pet pet in allPetsList)
             {
                 pet.SeeDoctor();
             }
@@ -69,7 +65,7 @@ namespace VirtualPet
 
         public void PlayWithAll()
         {
-            foreach (Pet pet in allPets)
+            foreach (Pet pet in allPetsList)
             {
                 pet.Play();
             }

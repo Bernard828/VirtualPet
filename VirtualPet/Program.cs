@@ -10,19 +10,17 @@ namespace VirtualPet
     {
         public static void Main(string[] args)
         {
-
-            PetShelter myShelter = new PetShelter();
-
-            Pet newPet = new Pet();
-            
             bool stillPlaying = true;
 
+            Pet newPet = new Pet();
+            PetShelter myShelter = new PetShelter();
+                        
             while (stillPlaying)
             {
                 Console.WriteLine("\n\tHello! Welcome to Virtual Pets\n");
                 Console.WriteLine("\t1. Bringing in a new pet?");
-                Console.WriteLine("\t2. View list of pets."); 
-                Console.WriteLine("\t3. Select a certain pet.");
+                Console.WriteLine("\t2. Select a certain pet.");
+                Console.WriteLine("\t3. View list of pets."); 
                 Console.WriteLine("\t4. Feed your pet(s).");
                 Console.WriteLine("\t5. Give your pet(s) water.");
                 Console.WriteLine("\t6. Your pet(s) bored, let's play.");
@@ -32,10 +30,11 @@ namespace VirtualPet
                 Console.WriteLine("\tPress enter to return to the Main Menu\n");
 
                 string userChoice = Console.ReadLine().ToLower();
+                Console.Clear();
                 
             
                 switch (userChoice)
-                {
+                { //add Pet
                     case "1":
 
                      newPet = new Pet();
@@ -48,13 +47,13 @@ namespace VirtualPet
 
                     case "2":
 
-                       myShelter.PrintPetStats();
+                        myShelter.SpecificPet();
 
                         break;
 
                     case "3":
 
-                        myShelter.SpecificPet();
+                       myShelter.PrintPetStats();
 
                         break;
 
@@ -124,7 +123,7 @@ namespace VirtualPet
 
                         int numberForPet = Convert.ToInt32(Console.ReadLine());
 
-                        Console.WriteLine($"\tI know you'll give {myShelter.AddPet()} a good home!");
+                       // Console.WriteLine($"\tI know you'll give {myShelter.AddPet()} a good home!");
 
                         break;
 
