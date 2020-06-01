@@ -18,18 +18,19 @@ namespace VirtualPet
 
         public void PrintPetTypes()
         {
+            int listnumber = 1;
             Console.WriteLine("\n\t MASTER LIST of All Pets!!!");
 
             foreach (Pet pet in allPetsList)
             {
                // Console.WriteLine("\n");
-                Console.WriteLine($"aNumber. Name: {pet.Name}");
-                Console.WriteLine($"species type: {pet.Species}");
+                Console.WriteLine($"\t{listnumber}. Name: {pet.Name}\n, \tspecies type: {pet.Species}");
+                listnumber++;
                 //Console.WriteLine($"Robotic or Organic:{}");
             }
         }
 
-       //specificPet() job is to select a certain animal bu number, or name
+       //specificPet() job is to select a certain animal by number, or name
 
         public void PrintAllPetsList()
         {

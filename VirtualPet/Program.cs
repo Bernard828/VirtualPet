@@ -19,7 +19,7 @@ namespace VirtualPet
             {
                 Console.WriteLine("\n\tHello! Welcome to Virtual Pets\n");
                 Console.WriteLine("\t1. Bringing in a new pet?");
-                Console.WriteLine("\t2. Select a certain pet.");
+                Console.WriteLine("\t2. Select a certain pet to interact with.");
                 Console.WriteLine("\t3. View list of pets."); 
                 Console.WriteLine("\t4. Feed your pet(s).");
                 Console.WriteLine("\t5. Give your pet(s) water.");
