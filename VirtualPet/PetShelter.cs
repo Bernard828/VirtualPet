@@ -43,7 +43,11 @@ namespace VirtualPet
             }
         }
         
-        public void RemovePet(Pet pet)
+        public Pet FindAnimalByIndex (int index)
+        { Pet selectedPet = allPetsList[index];
+            return selectedPet;
+        }
+        public void AdoptPet(Pet pet)
         {
             allPetsList.Remove(pet);
         }
