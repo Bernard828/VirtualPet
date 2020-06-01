@@ -48,6 +48,7 @@ namespace VirtualPet
                     case "2":
 
                         myShelter.PrintAllPetsList();
+                        //int numberForPet = Convert.ToInt32(Console.ReadLine());
 
                         break;
 
@@ -118,12 +119,17 @@ namespace VirtualPet
 
                         break;
                     case "8":
-
                         Console.WriteLine("\tWho do you want to adopt?");
 
+                        myShelter.PrintAllPetsList();
                         int numberForPet = Convert.ToInt32(Console.ReadLine());
+                            //doesnt remove pet yet
 
-                       // Console.WriteLine($"\tI know you'll give {myShelter.AddPet()} a good home!");
+                       
+                        //Console.WriteLine($"Do you feel responsible enough to give a good home? ('YES'/'NO')");
+                        //Console.ReadLine();
+
+                       //Console.WriteLine($"\tI know you'll give {} a good home!");
 
                         break;
 

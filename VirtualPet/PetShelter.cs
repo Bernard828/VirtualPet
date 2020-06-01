@@ -7,6 +7,7 @@ namespace VirtualPet
     public class PetShelter
     {
        public List<Pet> allPetsList = new List<Pet>();
+        public int index;
                 
        public void AddPet(Pet pet)
        {
@@ -42,22 +43,11 @@ namespace VirtualPet
             }
         }
         
-
- 
-        //internal object AddPet()
-        //{
-        //    return indexPetName;
-        //}
         public void RemovePet(Pet pet)
         {
-         allPetsList.Remove(pet);
-        }
-        public void SpecificPet()
-        {
-           // allPets."";
+            allPetsList.Remove(pet);
         }
         
-
         public void FeedAll()
         {
             foreach( Pet pet in allPetsList)
@@ -65,6 +55,7 @@ namespace VirtualPet
                 pet.Feed();
             }            
         }
+
 
         public void WaterAll()
         {

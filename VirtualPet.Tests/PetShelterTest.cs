@@ -7,7 +7,7 @@ namespace VirtualPet.Tests
 {
     public class ShelterTests
     {
-        PetShelter myShelter = new PetShelter();
+       PetShelter myShelter = new PetShelter();
 
         [Fact]
         public void AddPet_Should_Include_List_Count_By1()
