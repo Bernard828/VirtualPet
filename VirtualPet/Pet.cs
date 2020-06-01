@@ -8,7 +8,7 @@ namespace VirtualPet
 {
     public class Pet
     {
-        public virtual string Name { get; set; }
+        public string Name { get; set; }
         public bool PetType { get; set; }
         public string Species { get; set; }
         public int Hunger { get; set; }
@@ -124,7 +124,7 @@ namespace VirtualPet
         public void PrintThisPetStats()
         {
 
-            Console.WriteLine($"\t Pet:{Name} | Species:{Species}| Boredom:{Boredom} | Hunger:{Hunger}| Thirst:{Thirst}| Health:{ Health  }");
+            Console.WriteLine($"\t Pet:{Name} | Boredom:{Boredom} | Hunger:{Hunger}| Thirst:{Thirst}| Health:{ Health  }");
 
         }
     }

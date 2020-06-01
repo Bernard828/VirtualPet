@@ -13,9 +13,37 @@ namespace VirtualPet
             //int[] = allPets.Contains(pet);
 
             allPetsList.Add(pet);
-
        }
 
+        public void PrintPetTypes()
+        {
+            Console.WriteLine("\n\t MASTER LIST of All Pets!!!");
+
+            foreach (Pet pet in allPetsList)
+            {
+               // Console.WriteLine("\n");
+                Console.WriteLine($"aNumber. Name: {pet.Name}");
+                Console.WriteLine($"species type: {pet.Species}");
+                //Console.WriteLine($"Robotic or Organic:{}");
+            }
+        }
+
+       //specificPet() job is to select a certain animal bu number, or name
+
+        public void PrintAllPetsList()
+        {
+            int listnumber = 1;
+            Console.WriteLine("\tList of Pets!!!");
+            foreach (Pet pet in allPetsList)
+            {
+                string Name = pet.GetName();
+                Console.WriteLine($"\t{listnumber}.{Name}");
+                listnumber++;
+            }
+        }
+        
+
+ 
         //internal object AddPet()
         //{
         //    return indexPetName;
@@ -28,16 +56,7 @@ namespace VirtualPet
         {
            // allPets."";
         }
-        public void PrintPetStats()
-        {
-            Console.WriteLine("\n\tList of pets in this shelter");
-
-            foreach (Pet pet in allPetsList)
-            {
-                Console.WriteLine("\n");
-              pet.PrintThisPetStats();
-            }
-        }
+        
 
         public void FeedAll()
         {

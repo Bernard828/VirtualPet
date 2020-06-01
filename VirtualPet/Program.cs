@@ -47,13 +47,13 @@ namespace VirtualPet
 
                     case "2":
 
-                        myShelter.SpecificPet();
+                        myShelter.PrintAllPetsList();
 
                         break;
 
                     case "3":
 
-                       myShelter.PrintPetStats();
+                       myShelter.PrintPetTypes();
 
                         break;
 
