@@ -60,7 +60,7 @@ namespace VirtualPet
 
                     case "4":
 
-                        Console.WriteLine("\tPress '1'feed one pet, press '2' feed all pets.");
+                        Console.WriteLine("\tEnter 1' [To feed one pet] or '2' [Feed all pets].");
                        
                         string feedChoice = Console.ReadLine();
 
@@ -80,11 +80,10 @@ namespace VirtualPet
 
                             default:
                                 break;
-                        }
-                        break;
+                        }break;
 
                     case "5":
-                        Console.WriteLine("\tPress '1' to quench one pet's thirst , press '2' for all pets.");
+                        Console.WriteLine("\tPress '1' [To quench one pet's thirst] or press '2' [For all pets].");
 
                         string thirstChoice = Console.ReadLine();
 
@@ -99,41 +98,67 @@ namespace VirtualPet
 
                             case "2":
 
-                                myShelter.FeedAll();
+                                myShelter.WaterAll();
 
                                 break;
 
                             default:
                                 break;
-                        }
-                        break;
+                        }break;
 
                     case "6":
+                        Console.WriteLine("\tPress '1'[Play with one pet] or press '2' [Play with all pets].");
 
-                       newPet.Play();
+                        string playChoice = Console.ReadLine();
 
-                        break;
+                        switch (playChoice)
+                        {
+                            case "1":
+
+                                newPet.Play();
+
+                                break;
+
+                            case "2":
+
+                                myShelter.PlayWithAll();
+
+                                break;
+
+                            default:
+                                break;
+                        }break;
+
                     case "7":
+                        Console.WriteLine("\tPress '1' [To take one pet] or press '2' [To take all pets].");
 
-                        newPet.SeeDoctor();
+                        string healthChoice = Console.ReadLine();
 
-                        break;
+                        switch (healthChoice)
+                        {
+                            case "1":
+
+                                newPet.SeeDoctor();
+                                
+                                break;
+
+                            case "2":
+
+                                myShelter.SeeDoctorAll();
+
+                                break;
+
+                            default:
+                                break;
+                        }break;
+
                     case "8":
                         myShelter.PrintAllPetsList();
                         Console.WriteLine("\n\tWho do you want to adopt?");
-
-                        myShelter.AdoptPet();
-
-                        //int numberForPet = Convert.ToInt32(Console.ReadLine());
-                        //myShelter.AdoptPet();
-                            //doesnt remove pet yet
-
-                       
-                        //Console.WriteLine($"Do you feel responsible enough to give a good home? ('YES'/'NO')");
-                        //Console.ReadLine();
-
-                       //Console.WriteLine($"\tI know you'll give {} a good home!");
-
+                        int petName = Convert.ToInt32(Console.ReadLine());
+                        Pet  petToRemove = myShelter.FindAnimalByIndex(petName - 1);
+                        myShelter.AdoptPet(petToRemove);
+                        Console.WriteLine($"You'll make a great pet parent!");
                         break;
 
                     case "q":
