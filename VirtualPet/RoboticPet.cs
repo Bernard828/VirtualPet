@@ -4,7 +4,8 @@ using System.Text;
 
 namespace VirtualPet
 {
-    class Robotic
+    class Robotic :Pet
     {
+
     }
 }

@@ -4,34 +4,34 @@ using System.Text;
 
 namespace VirtualPet
 {
-    public class PetShelter
+    public class PetShelter : Pet
     {
-       public List<Pet> allPetsList = new List<Pet>();
-        public int index;
-                
-       public void AddPet(Pet pet)
-       {
-            //int[] = allPets.Contains(pet);
+        public bool OrganicPet { get; set; }
+        public bool Robotic { get; set; }
 
+        Pet pet = new Pet();
+
+        public List<Pet> allPetsList = new List<Pet>();
+        
+
+        public PetShelter()
+        {
+        }
+
+        public void AddPet(Pet pet)
+        {
             allPetsList.Add(pet);
-       }
+        }
 
         public void PrintPetTypes()
         {
             int listnumber = 1;
             Console.WriteLine("\n\t MASTER LIST of All Pets!!!");
 
-            foreach (Pet pet in allPetsList)
-            {
-               // Console.WriteLine("\n");
-                Console.WriteLine($"\t{listnumber}. Name: {pet.Name}\n, \tspecies type: {pet.Species}");
-                listnumber++;
-                //Console.WriteLine($"Robotic or Organic:{}");
-            }
+            Console.WriteLine($"\t{listnumber}. Name:{pet.Name}\n, \tspecies type: {pet.Species}");
+            listnumber++;
         }
-
-       //specificPet() job is to select a certain animal by number, or name
-
+        
         public void PrintAllPetsList()
         {
             int listnumber = 1;
@@ -45,7 +45,8 @@ namespace VirtualPet
         }
         
         public Pet FindAnimalByIndex (int index)
-        { Pet selectedPet = allPetsList[index];
+        { 
+            Pet selectedPet = allPetsList[index];
             return selectedPet;
         }
         public void AdoptPet(Pet pet)
@@ -83,6 +84,14 @@ namespace VirtualPet
             foreach (Pet pet in allPetsList)
             {
                 pet.Play();
+            }
+        }
+     
+        public void TickOnAllPets()
+        {
+            foreach( Pet pet in allPetsList)
+            {
+                pet.Tick();
             }
         }
 

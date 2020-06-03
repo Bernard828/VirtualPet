@@ -16,7 +16,7 @@ namespace VirtualPet
         public int Boredom { get; set; }
         public int Health { get; set; }
 
-        public Pet()
+        public  Pet()
         {
             Hunger = 50;
             Thirst = 50;
@@ -116,6 +116,7 @@ namespace VirtualPet
         }
         public void Tick()
         {
+
             Hunger += 5;
             Thirst += 5;
             Health -= 5;

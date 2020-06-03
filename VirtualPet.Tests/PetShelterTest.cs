@@ -13,20 +13,14 @@ namespace VirtualPet.Tests
         public void AddPet_Should_Include_List_Count_By1()
         {
            int petCount = myShelter.allPetsList.Count;
-
             Pet newPet = new Pet("second pet");
-
             myShelter.AddPet(newPet);
-
             int newPetCount = myShelter.allPetsList.Count;
         }
         //public void RemovePet_Removes_Pet_From_List()
         //{
-        //    Pet pet = new Pet();
-
-        //    sut.RemovePet(pet);
-
-        //    Assert.DoesNotContain(Pet, sut.PetShelterList);
+        //    myShelter.RemovePet(newPet);
+        //    int newPetCount = myShelter.allPetsList.Count;
         //}
 
         //Count should be original plus 1

@@ -13,6 +13,8 @@ namespace VirtualPet
             bool stillPlaying = true;
 
             Pet newPet = new Pet();
+            Robotic roboticPet = new Robotic();
+            OrganicPet organicPet = new OrganicPet();
             PetShelter myShelter = new PetShelter();
                         
             while (stillPlaying)
@@ -46,8 +48,8 @@ namespace VirtualPet
                         break;
 
                     case "2":
-
                         myShelter.PrintAllPetsList();
+                        myShelter.FindAnimalByIndex();
                         int numberForPet = Convert.ToInt32(Console.ReadLine());
 
                         break;
