@@ -42,7 +42,8 @@ namespace VirtualPet
         {
             return Species;
         }
-        public int GetBoredom()
+       
+        public  virtual int GetBoredom()
         {
             return Boredom;
         }

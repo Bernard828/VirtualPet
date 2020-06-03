@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VirtualPet
 {
-    class RoboticPet :Pet
+    public class RoboticPet :Pet
     {
         public int Maintenance { get; set; }
         public int OilLevel { get; set; }
@@ -67,7 +67,7 @@ namespace VirtualPet
         public override void Tick()
         {
             this.Maintenance -= 5;
-            this.OilLevel -= 15;
+            this.OilLevel += 5;
             this.Boredom += 10;
         }
 
