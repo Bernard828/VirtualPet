@@ -64,49 +64,27 @@ namespace VirtualPet
 
         public virtual void GiveWater()
         {
-            Thirst += 5;
-            Console.WriteLine($"\tYou gave {Name} some water. Thirst: {Thirst}");
+           
         }
         public virtual void Feed()
         {
-            this.Hunger += 5;
-            Console.WriteLine($"\tYou fed {Name} now. Hunger: {Hunger}");
         }
 
         public virtual void SeeDoctor()
         {
-            this.Health += 30;
-            Console.WriteLine($"\t{Name} is feeling much better! Health: {Health}");
+         
         }
 
 
-        public void Play()
-        {
-            this.Hunger += 10;
-
-            this.Thirst += 20;
-
-            this.Health += 10;
-
-            this.Boredom -= 10;
-
-            Console.WriteLine($"\t{Name} enjoyed the exercise.");
-
-            Console.WriteLine($"\n\t{Name}: 'That was fun!' " +
-                $"\tHunger:{Hunger}| Thirst:{Thirst}| Health:{Health}| Boredom:{Boredom}");
+        public virtual void Play()
+        { 
         }
-        public void Tick()
+        public virtual void Tick()
         {
-
-            Hunger += 5;
-            Thirst += 5;
-            Health -= 5;
         }
 
-        public void PrintThisPetStats()
+        public virtual void PrintThisPetStats()
         {
-
-            Console.WriteLine($"\t Pet:{Name} | Boredom:{Boredom} | Hunger:{Hunger}| Thirst:{Thirst}| Health:{ Health  }");
 
         }
     }

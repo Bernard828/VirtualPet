@@ -46,5 +46,32 @@ namespace VirtualPet
             this.Health += 30;
             Console.WriteLine($"\t{Name} is feeling much better! Health: {Health}");
         }
+        public override void Play()
+        {
+            this.Hunger += 10;
+
+            this.Thirst += 20;
+
+            this.Health += 10;
+
+            this.Boredom -= 10;
+
+            Console.WriteLine($"\t{Name} enjoyed the exercise.");
+
+            Console.WriteLine($"\n\t{Name}: 'That was fun!' " +
+                $"\tHunger:{Hunger}| Thirst:{Thirst}| Health:{Health}| Boredom:{Boredom}");
+        }
+        public override void Tick()
+        {
+            Hunger += 5;
+            Thirst += 5;
+            Health -= 5;
+            Boredom += 5;
+        }
+        public override void PrintThisPetStats()
+        {
+            Console.WriteLine($"\t Pet:{Name} | Boredom:{Boredom} | Hunger:{Hunger}| Thirst:{Thirst}| Health:{ Health  }");
+        }
+
     }
 }
