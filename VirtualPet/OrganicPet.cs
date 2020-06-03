@@ -72,6 +72,19 @@ namespace VirtualPet
         {
             Console.WriteLine($"\t Pet:{Name} | Boredom:{Boredom} | Hunger:{Hunger}| Thirst:{Thirst}| Health:{ Health  }");
         }
+        public override void CreatePet()
+        {
+            Console.WriteLine("\n\tWhat's the animal's name?");
 
+            string name = Console.ReadLine();
+
+            SetName(name);
+
+            Console.WriteLine("\n\tWhat type of animal?");
+
+            string species = Console.ReadLine();
+
+            SetSpecies(species);
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace VirtualPet
             bool stillPlaying = true;
 
             Pet newPet = new Pet();
-            Robotic roboticPet = new Robotic();
+            RoboticPet roboticPet = new RoboticPet();
             OrganicPet organicPet = new OrganicPet();
             PetShelter myShelter = new PetShelter();
                         
@@ -40,16 +40,30 @@ namespace VirtualPet
                 { //add Pet
                     case "1":
 
-                     newPet = new Pet();
-                    newPet.CreatePet();
-                    myShelter.AddPet(newPet);    
-                        
+                        Console.WriteLine("\tEnter 1' [Organic Pet] or '2' [Robotic Pet].");
+                        string petChoice = Console.ReadLine();
+
+                        switch (petChoice)
+                        {
+                            case "1":
+                                organicPet = new OrganicPet();
+                                organicPet.CreatePet();
+                                myShelter.AddPet(organicPet);
+                                break;
+
+                            case "2":
+                                roboticPet = new RoboticPet();
+                                roboticPet.CreatePet();
+                                myShelter.AddPet(roboticPet);
+                                break;
+
+                            default:
+                                break;
+                        }
                         break;
 
                     case "2":
                         myShelter.PrintAllPetsList();
-                        
-                        
                         newPet = myShelter.FindAnimalByIndex();
                         break;
 

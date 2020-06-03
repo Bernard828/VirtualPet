@@ -15,9 +15,8 @@ namespace VirtualPet
 
         public Pet()
         {
-            
-            Boredom = 50;
            
+            Boredom = 50;
         }
         public Pet(string name)
         {
@@ -47,19 +46,9 @@ namespace VirtualPet
         {
             return Boredom;
         }
-        public void CreatePet()
+        public virtual void CreatePet()
         {
-            Console.WriteLine("\n\tWhat's the animal's name?");
 
-            string name = Console.ReadLine();
-
-            SetName(name);
-
-            Console.WriteLine("\n\tWhat type of animal?");
-
-            string species = Console.ReadLine();
-
-            SetSpecies(species);
         }
 
         public virtual void GiveWater()
@@ -68,6 +57,7 @@ namespace VirtualPet
         }
         public virtual void Feed()
         {
+
         }
 
         public virtual void SeeDoctor()
@@ -78,6 +68,7 @@ namespace VirtualPet
 
         public virtual void Play()
         { 
+
         }
         public virtual void Tick()
         {
