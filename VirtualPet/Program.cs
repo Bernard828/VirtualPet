@@ -20,6 +20,7 @@ namespace VirtualPet
             while (stillPlaying)
             {
                 Console.WriteLine("\n\tHello! Welcome to Virtual Pets\n");
+                Console.WriteLine("\nYou are currently interacting with " + newPet.Name +"\n");
                 Console.WriteLine("\t1. Bringing in a new pet?");
                 Console.WriteLine("\t2. Select a certain pet to interact with.");
                 Console.WriteLine("\t3. View list of pets."); 
@@ -40,53 +41,46 @@ namespace VirtualPet
                     case "1":
 
                      newPet = new Pet();
-
-                        newPet.CreatePet();
-
-                        myShelter.AddPet(newPet);    
+                    newPet.CreatePet();
+                    myShelter.AddPet(newPet);    
                         
                         break;
 
                     case "2":
                         myShelter.PrintAllPetsList();
-                        myShelter.FindAnimalByIndex();
-                        int numberForPet = Convert.ToInt32(Console.ReadLine());
-
+                        
+                        
+                        newPet = myShelter.FindAnimalByIndex();
                         break;
 
                     case "3":
 
-                       myShelter.PrintPetTypes();
-
+                      // myShelter.PrintPetTypes();
                         break;
 
                     case "4":
 
                         Console.WriteLine("\tEnter 1' [To feed one pet] or '2' [Feed all pets].");
-                       
-                        string feedChoice = Console.ReadLine();
+                       string feedChoice = Console.ReadLine();
 
                         switch (feedChoice)
                         {
                             case "1":
 
                                 newPet.Feed();
-
                                 break;
 
                             case "2":
 
                                 myShelter.FeedAll();
-
                                 break;
-
                             default:
                                 break;
                         }break;
 
                     case "5":
                         Console.WriteLine("\tPress '1' [To quench one pet's thirst] or press '2' [For all pets].");
-
+                        
                         string thirstChoice = Console.ReadLine();
 
                         switch (thirstChoice)
@@ -94,14 +88,11 @@ namespace VirtualPet
                             case "1":
 
                                 newPet.GiveWater();
-
-
                                 break;
 
                             case "2":
 
                                 myShelter.WaterAll();
-
                                 break;
 
                             default:
@@ -118,13 +109,11 @@ namespace VirtualPet
                             case "1":
 
                                 newPet.Play();
-
                                 break;
 
                             case "2":
 
                                 myShelter.PlayWithAll();
-
                                 break;
 
                             default:
@@ -141,13 +130,11 @@ namespace VirtualPet
                             case "1":
 
                                 newPet.SeeDoctor();
-                                
                                 break;
 
                             case "2":
 
                                 myShelter.SeeDoctorAll();
-
                                 break;
 
                             default:
@@ -158,7 +145,7 @@ namespace VirtualPet
                         myShelter.PrintAllPetsList();
                         Console.WriteLine("\n\tWho do you want to adopt?");
                         int petName = Convert.ToInt32(Console.ReadLine());
-                        Pet  petToRemove = myShelter.FindAnimalByIndex(petName - 1);
+                        Pet  petToRemove = myShelter.FindAnimalByIndex();
                         myShelter.AdoptPet(petToRemove);
                         Console.WriteLine($"You'll make a great pet parent!");
                         break;
@@ -166,7 +153,6 @@ namespace VirtualPet
                     case "q":
 
                         Console.ReadLine().ToLower();
-
                         break;
 
                     default:
@@ -174,6 +160,5 @@ namespace VirtualPet
                 }
             }
         }
-
     }
 }

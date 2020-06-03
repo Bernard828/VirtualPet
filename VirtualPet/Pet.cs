@@ -11,17 +11,13 @@ namespace VirtualPet
         public string Name { get; set; }
         public bool PetType { get; set; }
         public string Species { get; set; }
-        public int Hunger { get; set; }
-        public int Thirst { get; set; }
-        public int Boredom { get; set; }
-        public int Health { get; set; }
+       public int Boredom { get; set; }
 
-        public  Pet()
+        public Pet()
         {
-            Hunger = 50;
-            Thirst = 50;
+            
             Boredom = 50;
-            Health = 50;
+           
         }
         public Pet(string name)
         {
@@ -47,21 +43,6 @@ namespace VirtualPet
         {
             return Species;
         }
-
-        public int GetHunger()
-        {
-            return Hunger;
-        }
-        public int GetThirst()
-        {
-            return Thirst;
-        }
-
-        public int GetHealth()
-        {
-            return Health;
-        }
-
         public int GetBoredom()
         {
             return Boredom;
@@ -81,18 +62,18 @@ namespace VirtualPet
             SetSpecies(species);
         }
 
-        public void GiveWater()
+        public virtual void GiveWater()
         {
             Thirst += 5;
             Console.WriteLine($"\tYou gave {Name} some water. Thirst: {Thirst}");
         }
-        public void Feed()
+        public virtual void Feed()
         {
             this.Hunger += 5;
             Console.WriteLine($"\tYou fed {Name} now. Hunger: {Hunger}");
         }
 
-        public void SeeDoctor()
+        public virtual void SeeDoctor()
         {
             this.Health += 30;
             Console.WriteLine($"\t{Name} is feeling much better! Health: {Health}");

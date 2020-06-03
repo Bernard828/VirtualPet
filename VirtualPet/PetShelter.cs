@@ -4,12 +4,10 @@ using System.Text;
 
 namespace VirtualPet
 {
-    public class PetShelter : Pet
+    public class PetShelter
     {
         public bool OrganicPet { get; set; }
         public bool Robotic { get; set; }
-
-        Pet pet = new Pet();
 
         public List<Pet> allPetsList = new List<Pet>();
         
@@ -23,14 +21,14 @@ namespace VirtualPet
             allPetsList.Add(pet);
         }
 
-        public void PrintPetTypes()
-        {
-            int listnumber = 1;
-            Console.WriteLine("\n\t MASTER LIST of All Pets!!!");
+        //public void PrintPetTypes()
+        //{
+        //    int listnumber = 1;
+        //    Console.WriteLine("\n\t MASTER LIST of All Pets!!!");
 
-            Console.WriteLine($"\t{listnumber}. Name:{pet.Name}\n, \tspecies type: {pet.Species}");
-            listnumber++;
-        }
+        //    Console.WriteLine($"\t{listnumber}. Name:{pet.Name}\n, \tspecies type: {pet.Species}");
+        //    listnumber++;
+        //}
         
         public void PrintAllPetsList()
         {
@@ -43,11 +41,13 @@ namespace VirtualPet
                 listnumber++;
             }
         }
-        
-        public Pet FindAnimalByIndex (int index)
-        { 
-            Pet selectedPet = allPetsList[index];
-            return selectedPet;
+
+        public Pet FindAnimalByIndex()
+        {
+            int numberForPet = Convert.ToInt32(Console.ReadLine());
+            int selectedPet = (numberForPet - 1);
+            Console.WriteLine(selectedPet);
+            return allPetsList[selectedPet];
         }
         public void AdoptPet(Pet pet)
         {
@@ -61,7 +61,6 @@ namespace VirtualPet
                 pet.Feed();
             }            
         }
-
 
         public void WaterAll()
         {
@@ -94,6 +93,5 @@ namespace VirtualPet
                 pet.Tick();
             }
         }
-
     }
 }
