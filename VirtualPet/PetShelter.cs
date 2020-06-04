@@ -10,7 +10,6 @@ namespace VirtualPet
         public bool Robotic { get; set; }
 
         public List<Pet> allPetsList = new List<Pet>();
-        
 
         public PetShelter()
         {

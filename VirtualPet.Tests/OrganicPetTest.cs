@@ -12,6 +12,7 @@ namespace VirtualPet.Tests
         {
             testOPet = new OrganicPet();
         }
+
         [Fact]
         public void OPet_Populates_NewOPet()
         {
