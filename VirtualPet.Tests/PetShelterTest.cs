@@ -162,15 +162,5 @@ namespace VirtualPet.Tests
             Assert.Equal(45, newOrganicPet1.Health);
             Assert.Equal(45, newOrganicPet2.Health);
         }
-
-        //[Fact]
-        //public void Find_AnimalBy_Index_Should_Return_Pet_at_CorrectIndex()
-        //{
-        //    myShelter.allPetsList.Add(newOrganicPet1);
-        //    myShelter.allPetsList.Add(newOrganicPet2);
-        //    myShelter.FindAnimalByIndex();
-        //    Assert.()
-        //}
-
     }
 }
