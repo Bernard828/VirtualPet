@@ -9,6 +9,7 @@ namespace VirtualPet
         public int Thirst { get; set; }
         public int Hunger { get; set; }
         public int Health { get; set; }
+        public string PetStat { get; set; }
       
 
         public OrganicPet() : base()
@@ -83,7 +84,7 @@ namespace VirtualPet
         //        listnumber++;
         //    }
         //}
-        public override void PrintThisPetStats()
+        public override void PrintThisPetStats() //get; set ;to PrintAllPetList()
         {
             Console.WriteLine($"\t Pet:{Name} | Boredom:{Boredom} | Hunger:{Hunger}| Thirst:{Thirst}| Health:{ Health  }");
         }

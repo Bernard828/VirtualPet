@@ -42,9 +42,9 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void GetMaintenance_Should_Return_Initial_Maintenance_Level_Of_50()
+        public void GetRepair_Should_Return_Initial_Maintenance_Level_Of_50()
         {
-            int testPetMaintenance = testRPet.GetMaintenance();
+            int testPetMaintenance = testRPet.GetRepair();
 
             Assert.Equal(50, testPetMaintenance);
         }
@@ -71,7 +71,7 @@ namespace VirtualPet.Tests
         
             testRPet.SeeDoctor();
 
-            Assert.Equal(55, testRPet.GetMaintenance());
+            Assert.Equal(55, testRPet.GetRepair());
         }
 
         [Fact]
@@ -88,7 +88,7 @@ namespace VirtualPet.Tests
 
             testRPet.Play();
 
-            Assert.Equal(45, testRPet.GetMaintenance());
+            Assert.Equal(45, testRPet.GetRepair());
         }
 
         [Fact]
@@ -121,7 +121,7 @@ namespace VirtualPet.Tests
         {
              testRPet.Tick();
 
-            Assert.Equal(45, testRPet.GetMaintenance());
+            Assert.Equal(45, testRPet.GetRepair());
 
         }
     }

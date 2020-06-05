@@ -23,12 +23,14 @@ namespace VirtualPet
         public void PrintAllPetsList()
         {
             int listnumber = 1;
-            Console.WriteLine("\tList of Pets!!!");
+            Console.WriteLine("\tMaster List\n");
+            Console.WriteLine("No.|\tName\t||  Species");
             
             foreach (Pet pet in allPetsList)
             {
                 string Name = pet.GetName();
-                Console.WriteLine($"\t{listnumber}.{Name}");
+                string Species = pet.GetSpecies();
+                Console.WriteLine($" {listnumber}.|\t{Name}\t|| {Species}");  //ADD SPECIES
                 listnumber++;
             }
         }
@@ -49,7 +51,7 @@ namespace VirtualPet
         {
             foreach( Pet pet in allPetsList)
             {
-                pet.Feed();
+                 pet.Feed();
             }            
         }
 

@@ -77,7 +77,7 @@ namespace VirtualPet
 
             Console.WriteLine("\n\tWhat type of animal?");
 
-            string species = "Robo- " + Console.ReadLine();
+            string species = "Robo" + Console.ReadLine();
 
             SetSpecies(species);
         }
