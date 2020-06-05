@@ -29,10 +29,16 @@ namespace VirtualPet.Tests
 
        
         [Fact]
-        public void Pet_Should_Have_Maintenance()
+        public void Pet_Should_Have_Repair()
         {
 
-            Assert.NotNull(testRPet.Maintenance);
+            Assert.NotNull(testRPet.Repair);
+        }
+        [Fact]
+        public void Pet_Should_Have_Battery()
+        {
+
+            Assert.NotNull(testRPet.Battery);
         }
 
         [Fact]

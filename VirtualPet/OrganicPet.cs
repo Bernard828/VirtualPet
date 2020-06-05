@@ -33,18 +33,19 @@ namespace VirtualPet
         public override void GiveWater()
         {
             Thirst += 5;
-            Console.WriteLine($"\tYou gave {Name} some water. Thirst: {Thirst}");
+            Console.WriteLine($"\tYou gave {Name} some water. Thirst Level ({Thirst})");
         }
         public override void Feed()
         {
             this.Hunger += 5;
-            Console.WriteLine($"\tYou fed {Name} now. Hunger: {Hunger}");
+            Console.WriteLine($"\tYou fed {Name}, Hunger Level ({Hunger})");
         }
 
         public override void SeeDoctor()
         {
+
             this.Health += 30;
-            Console.WriteLine($"\t{Name} is feeling much better! Health: {Health}");
+            Console.WriteLine($"\t{Name} is feeling much better! Health Level ({Health})");
         }
         public override void Play()
         {
@@ -56,10 +57,9 @@ namespace VirtualPet
 
             this.Boredom -= 10;
 
-            Console.WriteLine($"\t{Name} enjoyed the exercise.");
-
-            Console.WriteLine($"\n\t{Name}: 'That was fun!' " +
-                $"\tHunger:{Hunger}| Thirst:{Thirst}| Health:{Health}| Boredom:{Boredom}");
+            Console.WriteLine($"\n\t{Name}:" +
+            $"\tHunger:{Hunger}| Thirst:{Thirst}| Health:{Health}| Boredom:{Boredom}");
+            Console.WriteLine("That was fun!");
         }
         public override void Tick()
         {
@@ -67,7 +67,22 @@ namespace VirtualPet
             Thirst += 5;
             Health -= 5;
             Boredom += 5;
+
+            Console.WriteLine($"\n\t{Name}:" +
+            $"\tHunger:{Hunger}| Thirst:{Thirst}| Health:{Health}| Boredom:{Boredom}");
         }
+        //public void PrintAllPetsList()
+        //{
+        //    int listnumber = 1;
+        //    Console.WriteLine("\tList of Pets!!!");
+
+        //    foreach (OrganicPet pet in allPetsList)
+        //    {
+        //        string Name = pet.GetName();
+        //        Console.WriteLine($"\t{listnumber}.{Name}");
+        //        listnumber++;
+        //    }
+        //}
         public override void PrintThisPetStats()
         {
             Console.WriteLine($"\t Pet:{Name} | Boredom:{Boredom} | Hunger:{Hunger}| Thirst:{Thirst}| Health:{ Health  }");

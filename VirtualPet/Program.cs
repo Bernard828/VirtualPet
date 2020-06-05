@@ -19,8 +19,8 @@ namespace VirtualPet
                         
             while (stillPlaying)
             {
-                Console.WriteLine("\n\tHello! Welcome to Virtual Pets\n");
-                Console.WriteLine("\nYou are currently interacting with " + newPet.Name +"\n");
+                Console.WriteLine("\n\tHello! Welcome to Virtual Pets \t\t\t\t"); myShelter.PrintAllPetsList();
+                Console.WriteLine($"\nYou are currently interacting with " + newPet.Name +"\n");
                 Console.WriteLine("\t1. Bringing in a new pet?");
                 Console.WriteLine("\t2. Select a certain pet to interact with.");
                 Console.WriteLine("\t3. View list of pets."); 
@@ -37,7 +37,7 @@ namespace VirtualPet
                 
             
                 switch (userChoice)
-                { //add Pet
+                { 
                     case "1":
 
                         Console.WriteLine("\tEnter 1' [Organic Pet] or '2' [Robotic Pet].");
@@ -46,12 +46,14 @@ namespace VirtualPet
                         switch (petChoice)
                         {
                             case "1":
+                                myShelter.PrintAllPetsList();
                                 organicPet = new OrganicPet();
                                 organicPet.CreatePet();
                                 myShelter.AddPet(organicPet);
                                 break;
 
                             case "2":
+                                myShelter.PrintAllPetsList();
                                 roboticPet = new RoboticPet();
                                 roboticPet.CreatePet();
                                 myShelter.AddPet(roboticPet);
@@ -69,7 +71,8 @@ namespace VirtualPet
 
                     case "3":
 
-                      // myShelter.PrintPetTypes();
+                        myShelter.PrintAllPetsList(); //Create new method add pet stats, next to each pet
+
                         break;
 
                     case "4":
@@ -138,6 +141,7 @@ namespace VirtualPet
                         Console.WriteLine("\tPress '1' [To take one pet] or press '2' [To take all pets].");
 
                         string healthChoice = Console.ReadLine();
+                        Console.Clear();
 
                         switch (healthChoice)
                         {

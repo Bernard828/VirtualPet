@@ -24,6 +24,7 @@ namespace VirtualPet
         {
             int listnumber = 1;
             Console.WriteLine("\tList of Pets!!!");
+            
             foreach (Pet pet in allPetsList)
             {
                 string Name = pet.GetName();

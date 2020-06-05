@@ -6,37 +6,25 @@ namespace VirtualPet
 {
     public class RoboticPet :Pet
     {
-        public int Maintenance { get; set; }
+        public int Repair { get; set; }
         public int OilLevel { get; set; }
+        public int Battery { get; set; }
 
         public RoboticPet() : base()
         {
-            Maintenance = 50;
+            Repair = 50;
             OilLevel = 50;
+            Battery = 100;
         }
-        public int GetMaintenance()
+        public int GetRepair()
         {
-            return Maintenance ;
+            return Repair ;
         }
         public int GetOilLevel()
         {
             return OilLevel;
         }
       
-        public override void CreatePet()
-        {
-            Console.WriteLine("\n\tWhat's the animal's name?");
-
-            string name = Console.ReadLine();
-
-            SetName(name);
-
-            Console.WriteLine("\n\tWhat type of animal?");
-
-            string species = "Robo- " + Console.ReadLine();
-
-            SetSpecies(species);
-        }
         public override void GiveWater()
         {
             this.OilLevel += 5;
@@ -50,30 +38,48 @@ namespace VirtualPet
 
         public override void SeeDoctor()
         {
-            this.Maintenance += 5;
-            Console.WriteLine($"\tYou fixed-up  {Name} now. Maintenance Level: {Maintenance}");
+            this.Repair += 5;
+            Console.WriteLine($"\tYou fixed-up  {Name} now. Repaired: {Repair}");
         }
 
 
         public override void Play()
         {
-            this.Maintenance -= 5;
+            this.Repair -= 5;
             this.OilLevel += 15;
             this.Boredom -= 10;
             Console.WriteLine($"\n\t{Name}: 'That was fun!' " +
-                $"\tMaintenance:{Maintenance}| Oil Level:{OilLevel}| Boredom:{Boredom}");
+                $"\tRepair:{Repair}| Oil Level:{OilLevel}| Boredom:{Boredom}");
 
         }
         public override void Tick()
         {
-            this.Maintenance -= 5;
+            this.Repair -= 5;
             this.OilLevel += 5;
             this.Boredom += 10;
+            this.Battery -= 10;
+
+            Console.WriteLine($"\n\t{Name}:" +
+            $"\t Repair ({Repair})| Oil Level ({OilLevel})| Battery Life:{Battery}| Boredom:{Boredom}");
         }
 
         public override void PrintThisPetStats()
         {
-            Console.WriteLine($"\t Pet:{Name} | Boredom:{Boredom} | Maintenance:{Maintenance}| Oil Level {OilLevel} |");
+            Console.WriteLine($"\t Pet:{Name} | Boredom:{Boredom} | Repair:{Repair}| Oil Level {OilLevel} |");
+        }
+        public override void CreatePet()
+        {
+            Console.WriteLine("\n\tWhat's the animal's name?");
+
+            string name = Console.ReadLine();
+
+            SetName(name);
+
+            Console.WriteLine("\n\tWhat type of animal?");
+
+            string species = "Robo- " + Console.ReadLine();
+
+            SetSpecies(species);
         }
     }
 }
