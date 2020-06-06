@@ -21,19 +21,16 @@ namespace VirtualPet
             {
                 myShelter.TickOnAllPets();
                 Console.WriteLine("\n\tHello! Welcome to Virtual Pets");
-                Console.WriteLine("\n\t\tMaster List\n");
-                myShelter.PrintAllPetsList();
                 Console.WriteLine("\n");
-                Console.WriteLine($"\n\tYou are currently interacting with " + newPet.Name);
-                Console.WriteLine("\n");
-                Console.WriteLine("\t1.Select a certain pet to interact with.");
+                Console.WriteLine("\t1. View list of pets."); 
                 Console.WriteLine("\t2. Bringing in a new pet?");
-                Console.WriteLine("\t3. View list of pets."); 
+                Console.WriteLine("\t3. Select a certain pet to interact with.");
                 Console.WriteLine("\t4. Feed your pet(s).");
                 Console.WriteLine("\t5. Give your pet(s) water.");
                 Console.WriteLine("\t6. Your pet(s) bored, let's play.");
                 Console.WriteLine("\t7. Time for a checkup with the vet.");
-                Console.WriteLine("\t8. Adopt a pet!");
+                Console.WriteLine("\t8. Adopt a pet!\n");
+                Console.WriteLine($"\n\tYou are currently interacting with " + newPet.Name);
                 Console.WriteLine("\n\t Press 'Q' to Exit game.");
                 Console.WriteLine("\tPress enter to return to the Main Menu\n");
 
@@ -45,7 +42,6 @@ namespace VirtualPet
                 { 
                     case "1":
                         myShelter.PrintAllPetsList();
-                        newPet = myShelter.FindAnimalByIndex();
                         Console.Clear();
                     break;
                         
@@ -100,6 +96,7 @@ namespace VirtualPet
                             case "2":
 
                                 myShelter.FeedAll();
+                                Console.WriteLine($"\tYou fed all the animals in the shelter!");
                                 break;
 
                             default:
@@ -116,11 +113,13 @@ namespace VirtualPet
                             case "1":
 
                                 newPet.GiveWater();
+                                Console.WriteLine($"\tYou gave {newPet.Name} somthing to drink");
                                 break;
 
                             case "2":
 
                                 myShelter.WaterAll();
+                                Console.WriteLine($"\tYou gave all your animals something to drink.");
                                 break;
 
                             default:
@@ -137,11 +136,13 @@ namespace VirtualPet
                             case "1":
 
                                 newPet.Play();
+                                Console.WriteLine($"\tYou played with {newPet.Name}");
                                 break;
 
                             case "2":
 
                                 myShelter.PlayWithAll();
+                                Console.WriteLine($"\tYou played with all the animals.");
                                 break;
 
                             default:
@@ -174,10 +175,9 @@ namespace VirtualPet
                     case "8":
                         myShelter.PrintAllPetsList();
                         Console.WriteLine("\n\tWho do you want to adopt?");
-                        int petName = Convert.ToInt32(Console.ReadLine());
                         Pet  petToRemove = myShelter.FindAnimalByIndex();
                         myShelter.AdoptPet(petToRemove);
-                        Console.WriteLine($"You'll make a great pet parent!");
+                        Console.WriteLine(newPet.Name + $"said yes!! You'll make a great pet parent!");
                         break;
 
                     case "q":
