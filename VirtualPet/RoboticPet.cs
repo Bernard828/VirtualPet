@@ -9,6 +9,7 @@ namespace VirtualPet
         public int Repair { get; set; }
         public int OilLevel { get; set; }
         public int Battery { get; set; }
+
         public RoboticPet() : base()
         {
             Repair = 50;
@@ -22,6 +23,10 @@ namespace VirtualPet
         public int GetOilLevel()
         {
             return OilLevel;
+        }
+        public int GetBattery()
+        {
+            return Battery;
         }
       
         public override void GiveWater()
@@ -62,9 +67,7 @@ namespace VirtualPet
         }
 
         public override void PrintThisPetStats()
-        {      //new test
-            
-            //need to add list number to stat
+        {   
                 int listnumber = 1;
                     listnumber++;
 

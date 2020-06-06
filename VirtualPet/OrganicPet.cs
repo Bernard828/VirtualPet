@@ -32,7 +32,7 @@ namespace VirtualPet
         public override void GiveWater()
         {
             Thirst += 5;
-            Console.WriteLine($"\tYou gave {Name}'s new thirst Level: ({Thirst})");
+            Console.WriteLine($"\t{Name}'s new thirst level ({Thirst})");
         }
         public override void Feed()
         {
@@ -70,21 +70,8 @@ namespace VirtualPet
             Console.WriteLine($"\n\t{Name}:" +
             $"\tHunger:{Hunger}, Thirst:{Thirst}, Health:{Health}, Boredom:{Boredom}");
         }
-        //public void PrintAllPetsList()
-        //{
-        //    int listnumber = 1;
-        //    Console.WriteLine("\tList of Pets!!!");
-
-        //    foreach (OrganicPet pet in allPetsList)
-        //    {
-        //        string Name = pet.GetName();
-        //        Console.WriteLine($"\t{listnumber}.{Name}");
-        //        listnumber++;
-        //    }
-        //}
-        public override void PrintThisPetStats() //get; set ;to PrintAllPetList()
+        public override void PrintThisPetStats() 
         {
-            //need to add list number to stat
             int listnumber = 1;
             listnumber++;
 

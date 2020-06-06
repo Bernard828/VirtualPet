@@ -70,6 +70,16 @@ namespace VirtualPet.Tests
             Assert.Equal(80, newOrganicPet1.Health);
             Assert.Equal(80, newOrganicPet2.Health);
         }
+        public void SeeDoctorAll_Method_Should_Increase_Repair_By_30()
+        {
+            myShelter.allPetsList.Add(newOrganicPet1);
+            myShelter.allPetsList.Add(newOrganicPet2);
+
+            myShelter.SeeDoctorAll();
+
+            Assert.Equal(80, newOrganicPet1.Health);
+            Assert.Equal(80, newOrganicPet2.Health);
+        }
 
         [Fact]
         public void PlayWithAll_Method_Should_Increase_Hunger_By_10()
