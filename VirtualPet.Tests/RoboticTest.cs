@@ -18,6 +18,19 @@ namespace VirtualPet.Tests
         {
             Assert.NotNull(testRPet.GetOilLevel()); 
         }
+        [Fact]
+        public void Pet_Should_Have_Repair()
+        {
+
+            Assert.NotNull(testRPet.Repair);
+        }
+
+        [Fact]
+        public void Pet_Should_Have_Battery()
+        {
+
+            Assert.NotNull(testRPet.Battery);
+        }
 
         [Fact]
         public void GetOilLevel_Should_Return_Initial_OilLevel_Level_Of_50()
@@ -25,20 +38,6 @@ namespace VirtualPet.Tests
             int testPetOilLevel = testRPet.GetOilLevel();
 
             Assert.Equal(50, testPetOilLevel);
-        }
-
-       
-        [Fact]
-        public void Pet_Should_Have_Repair()
-        {
-
-            Assert.NotNull(testRPet.Repair);
-        }
-        [Fact]
-        public void Pet_Should_Have_Battery()
-        {
-
-            Assert.NotNull(testRPet.Battery);
         }
 
         [Fact]
@@ -50,14 +49,6 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void Feed_Should_Increase_OilLevel_By_20()
-        {
-            testRPet.Feed();
-
-            Assert.Equal(70, testRPet.GetOilLevel());
-        }
-
-        [Fact]
         public void GiveWater_Should_Increase_OilLevel_By_5()
         {
             testRPet.GiveWater();
@@ -66,7 +57,15 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void SeeDoctor_Should_Increase_Maintenance_By_5()
+        public void Feed_Should_Increase_OilLevel_By_20()
+        {
+            testRPet.Feed();
+
+            Assert.Equal(70, testRPet.GetOilLevel());
+        }
+        
+        [Fact]
+        public void SeeDoctor_Should_Increase_Repair_By_5()
         {
         
             testRPet.SeeDoctor();
@@ -75,20 +74,20 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void Play_Should_Increase_OilLevel_By_15()
-        {            
-            testRPet.Play();
-
-            Assert.Equal(65, testRPet.GetOilLevel());
-        }
-
-        [Fact]
-        public void Play_Should_Decrease_Maintenance_By_5()
+        public void Play_Should_Decrease_Repair_By_5()
         {
 
             testRPet.Play();
 
             Assert.Equal(45, testRPet.GetRepair());
+        }
+
+        [Fact]
+        public void Play_Should_Increase_OilLevel_By_15()
+        {            
+            testRPet.Play();
+
+            Assert.Equal(65, testRPet.GetOilLevel());
         }
 
         [Fact]
@@ -117,11 +116,20 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void Tick_Should_Decrease_Maintenance_By_5()
+        public void Tick_Should_Decrease_Repair_By_5()
         {
              testRPet.Tick();
 
             Assert.Equal(45, testRPet.GetRepair());
+
+        }
+
+        [Fact]
+        public void Tick_Should_Decrease_Battery_By_10()
+        {
+            testRPet.Tick();
+
+            Assert.Equal(45, testRPet.GetBattery());
 
         }
     }

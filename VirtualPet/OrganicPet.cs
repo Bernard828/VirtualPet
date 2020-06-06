@@ -44,16 +44,13 @@ namespace VirtualPet
         {
 
             this.Health += 30;
-            Console.WriteLine($"\t{Name}'s new health Level: ({Health})");
+            Console.WriteLine($"\t{Name}'s new health level: ({Health})");
         }
         public override void Play()
         {
             this.Hunger += 10;
-
             this.Thirst += 20;
-
             this.Health += 10;
-
             this.Boredom -= 10;
 
             Console.WriteLine($"\n\t{Name}:" +

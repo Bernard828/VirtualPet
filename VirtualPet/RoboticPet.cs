@@ -46,7 +46,6 @@ namespace VirtualPet
             Console.WriteLine($"\t{Name}'s new repair status: {Repair}");
         }
 
-
         public override void Play()
         {
             this.Repair -= 5;
