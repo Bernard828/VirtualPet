@@ -19,10 +19,15 @@ namespace VirtualPet
                         
             while (stillPlaying)
             {
-                Console.WriteLine("\n\tHello! Welcome to Virtual Pets \t\t\t\t"); myShelter.PrintAllPetsList();
-                Console.WriteLine($"\nYou are currently interacting with " + newPet.Name +"\n");
-                Console.WriteLine("\t1. Bringing in a new pet?");
-                Console.WriteLine("\t2. Select a certain pet to interact with.");
+                myShelter.TickOnAllPets();
+                Console.WriteLine("\n\tHello! Welcome to Virtual Pets");
+                Console.WriteLine("\n\t\tMaster List\n");
+                myShelter.PrintAllPetsList();
+                Console.WriteLine("\n");
+                Console.WriteLine($"\n\tYou are currently interacting with " + newPet.Name);
+                Console.WriteLine("\n");
+                Console.WriteLine("\t1.Select a certain pet to interact with.");
+                Console.WriteLine("\t2. Bringing in a new pet?");
                 Console.WriteLine("\t3. View list of pets."); 
                 Console.WriteLine("\t4. Feed your pet(s).");
                 Console.WriteLine("\t5. Give your pet(s) water.");
@@ -39,6 +44,13 @@ namespace VirtualPet
                 switch (userChoice)
                 { 
                     case "1":
+                        myShelter.PrintAllPetsList();
+                        newPet = myShelter.FindAnimalByIndex();
+                        Console.Clear();
+                    break;
+                        
+
+                    case "2":
 
                         Console.WriteLine("\tEnter 1' [Organic Pet] or '2' [Robotic Pet].");
                         string petChoice = Console.ReadLine();
@@ -46,33 +58,30 @@ namespace VirtualPet
                         switch (petChoice)
                         {
                             case "1":
+
                                 myShelter.PrintAllPetsList();
                                 organicPet = new OrganicPet();
                                 organicPet.CreatePet();
                                 myShelter.AddPet(organicPet);
                                 break;
-
+                            
                             case "2":
+
                                 myShelter.PrintAllPetsList();
                                 roboticPet = new RoboticPet();
                                 roboticPet.CreatePet();
                                 myShelter.AddPet(roboticPet);
                                 break;
-
                             default:
                                 break;
                         }
                         break;
-
-                    case "2":
-                        myShelter.PrintAllPetsList();
-                        newPet = myShelter.FindAnimalByIndex();
-                        break;
+                        
 
                     case "3":
-
-                        myShelter.PrintAllPetsList(); //Create new method add pet stats, next to each pet
-
+                        myShelter.PrintAllPetsList();
+                        Console.WriteLine("Select pet by number to view.");
+                        newPet = myShelter.FindAnimalByIndex();
                         break;
 
                     case "4":
@@ -85,12 +94,14 @@ namespace VirtualPet
                             case "1":
 
                                 newPet.Feed();
+                                Console.WriteLine($"\tYou fed {newPet.Name}");
                                 break;
 
                             case "2":
 
                                 myShelter.FeedAll();
                                 break;
+
                             default:
                                 break;
                         }break;
@@ -148,6 +159,7 @@ namespace VirtualPet
                             case "1":
 
                                 newPet.SeeDoctor();
+                                Console.WriteLine($"{ newPet.Name} is feeling much better!");
                                 break;
 
                             case "2":

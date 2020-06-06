@@ -9,7 +9,6 @@ namespace VirtualPet
         public int Repair { get; set; }
         public int OilLevel { get; set; }
         public int Battery { get; set; }
-
         public RoboticPet() : base()
         {
             Repair = 50;
@@ -28,18 +27,18 @@ namespace VirtualPet
         public override void GiveWater()
         {
             this.OilLevel += 5;
-            Console.WriteLine($"\tYou oiled {Name} now. Oil Level: {OilLevel}");
+            Console.WriteLine($"\t{Name}'s new oil level: {OilLevel}");
         }
         public override void Feed()
         {
             this.OilLevel += 20;
-            Console.WriteLine($"\tYou fed {Name} now. Oil Level: {OilLevel}");
+            Console.WriteLine($"\t{Name}'s new oil level: {OilLevel}");
         }
 
         public override void SeeDoctor()
         {
             this.Repair += 5;
-            Console.WriteLine($"\tYou fixed-up  {Name} now. Repaired: {Repair}");
+            Console.WriteLine($"\t{Name}'s new repair status: {Repair}");
         }
 
 
@@ -48,8 +47,7 @@ namespace VirtualPet
             this.Repair -= 5;
             this.OilLevel += 15;
             this.Boredom -= 10;
-            Console.WriteLine($"\n\t{Name}: 'That was fun!' " +
-                $"\tRepair:{Repair}| Oil Level:{OilLevel}| Boredom:{Boredom}");
+            Console.WriteLine($"\n\t{Name}\tRepair:{Repair}| Oil Level:{OilLevel}| Boredom:{Boredom}");
 
         }
         public override void Tick()
@@ -64,20 +62,25 @@ namespace VirtualPet
         }
 
         public override void PrintThisPetStats()
-        {
-            Console.WriteLine($"\t Pet:{Name} | Boredom:{Boredom} | Repair:{Repair}| Oil Level {OilLevel} |");
+        {      //new test
+            
+            //need to add list number to stat
+                int listnumber = 1;
+                    listnumber++;
+
+          Console.WriteLine($"\t{listnumber}.  |\t{Name}\t||Battery Level:({Battery}|Boredom:{Boredom}|Repair:{Repair}|Oil Level:{OilLevel}|{Species}|");
         }
         public override void CreatePet()
         {
             Console.WriteLine("\n\tWhat's the animal's name?");
 
-            string name = Console.ReadLine();
+            string name = Console.ReadLine().ToUpper();
 
             SetName(name);
 
             Console.WriteLine("\n\tWhat type of animal?");
 
-            string species = "Robo" + Console.ReadLine();
+            string species = "Robo"+ Console.ReadLine();
 
             SetSpecies(species);
         }

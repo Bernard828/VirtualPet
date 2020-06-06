@@ -9,8 +9,6 @@ namespace VirtualPet
         public int Thirst { get; set; }
         public int Hunger { get; set; }
         public int Health { get; set; }
-        public string PetStat { get; set; }
-      
 
         public OrganicPet() : base()
         {
@@ -34,19 +32,19 @@ namespace VirtualPet
         public override void GiveWater()
         {
             Thirst += 5;
-            Console.WriteLine($"\tYou gave {Name} some water. Thirst Level ({Thirst})");
+            Console.WriteLine($"\tYou gave {Name}'s new thirst Level: ({Thirst})");
         }
         public override void Feed()
         {
             this.Hunger += 5;
-            Console.WriteLine($"\tYou fed {Name}, Hunger Level ({Hunger})");
+            Console.WriteLine($"\t{Name}'s new hunger Level: {Hunger}");
         }
 
         public override void SeeDoctor()
         {
 
             this.Health += 30;
-            Console.WriteLine($"\t{Name} is feeling much better! Health Level ({Health})");
+            Console.WriteLine($"\t{Name}'s new health Level: ({Health})");
         }
         public override void Play()
         {
@@ -59,7 +57,7 @@ namespace VirtualPet
             this.Boredom -= 10;
 
             Console.WriteLine($"\n\t{Name}:" +
-            $"\tHunger:{Hunger}| Thirst:{Thirst}| Health:{Health}| Boredom:{Boredom}");
+            $"\tHunger:{Hunger}, Thirst:{Thirst}, Health:{Health}, Boredom:{Boredom}");
             Console.WriteLine("That was fun!");
         }
         public override void Tick()
@@ -70,7 +68,7 @@ namespace VirtualPet
             Boredom += 5;
 
             Console.WriteLine($"\n\t{Name}:" +
-            $"\tHunger:{Hunger}| Thirst:{Thirst}| Health:{Health}| Boredom:{Boredom}");
+            $"\tHunger:{Hunger}, Thirst:{Thirst}, Health:{Health}, Boredom:{Boredom}");
         }
         //public void PrintAllPetsList()
         //{
@@ -86,15 +84,20 @@ namespace VirtualPet
         //}
         public override void PrintThisPetStats() //get; set ;to PrintAllPetList()
         {
-            Console.WriteLine($"\t Pet:{Name} | Boredom:{Boredom} | Hunger:{Hunger}| Thirst:{Thirst}| Health:{ Health  }");
+            //need to add list number to stat
+            int listnumber = 1;
+            listnumber++;
+
+            Console.WriteLine($"\t{listnumber}.  |\t {Name}\t||Health({Health})|Boredom ({Boredom})|Hunger({Hunger})|Thirst({Thirst})|{Species}");
         }
         public override void CreatePet()
         {
             Console.WriteLine("\n\tWhat's the animal's name?");
 
-            string name = Console.ReadLine();
+            string name = Console.ReadLine().ToUpper();
 
             SetName(name);
+
 
             Console.WriteLine("\n\tWhat type of animal?");
 

@@ -8,8 +8,12 @@ namespace VirtualPet
     {
         public bool OrganicPet { get; set; }
         public bool Robotic { get; set; }
+        //public List OrganicList { get; set; }
+        //public List RoboticList { get; set; }
 
         public List<Pet> allPetsList = new List<Pet>();
+        public List<RoboticPet> roboList = new List<RoboticPet>();
+        public List<OrganicPet> orgList = new List<OrganicPet>();
 
         public PetShelter()
         {
@@ -23,24 +27,38 @@ namespace VirtualPet
         public void PrintAllPetsList()
         {
             int listnumber = 1;
-            Console.WriteLine("\tMaster List\n");
-            Console.WriteLine("No.|\tName\t||  Species");
+            Console.WriteLine("\t No.|\tName\t||  Species");
             
             foreach (Pet pet in allPetsList)
             {
                 string Name = pet.GetName();
                 string Species = pet.GetSpecies();
-                Console.WriteLine($" {listnumber}.|\t{Name}\t|| {Species}");  //ADD SPECIES
+                Console.WriteLine($"\t {listnumber}. |\t{Name}\t|| {Species}");
                 listnumber++;
             }
         }
+        public void PrintAllPetsStats()
+        {
+            int listnumber = 1;
+            Console.WriteLine("\t No.|\tName\t||  Species");
 
+            foreach (OrganicPet organicPet in allPetsList)
+            {
+                string Name = organicPet.GetName();
+                string Species = organicPet.GetSpecies();
+                int Health = organicPet.GetHealth();
+
+                Console.WriteLine($"\t {listnumber}. |\t{Name}\t|| {Species}| Life ({Health})/ ");
+                listnumber++;
+            }
+        }
         public Pet FindAnimalByIndex()
         {
             int numberForPet = Convert.ToInt32(Console.ReadLine());
             int selectedPet = (numberForPet - 1);
             Console.WriteLine(selectedPet);
             return allPetsList[selectedPet];
+
         }
         public void AdoptPet(Pet pet)
         {
@@ -49,9 +67,13 @@ namespace VirtualPet
         
         public void FeedAll()
         {
-            foreach( Pet pet in allPetsList)
+            foreach (Pet roboticPet in allPetsList)
             {
-                 pet.Feed();
+                roboticPet.Feed();
+            }
+            foreach ( Pet organicPet in allPetsList)
+            {
+                 organicPet.Feed();
             }            
         }
 
