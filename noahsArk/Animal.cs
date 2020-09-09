@@ -46,6 +46,10 @@ namespace noahsArk
             return Species;
         }
 
+        public void GiveFood() { }
+        public void GiveWater() { }
+        public void GoToSleep() { }
+
         public virtual void CreateAnimal() { }
         
         public void AddAnimal(Animal animal)
