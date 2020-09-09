@@ -10,6 +10,8 @@ namespace noahsArk
         private string Genus { get; set; }
         private string Species { get; set; }
 
+        public List<Animal> allAnimals = new List<Animal>();
+
         public Animal() { }
 
         public Animal(string name) { }
@@ -45,5 +47,10 @@ namespace noahsArk
         }
 
         public virtual void CreateAnimal() { }
+        
+        public void AddAnimal(Animal animal)
+        {
+            allAnimals.Add(animal);
+        }
     }
 }
