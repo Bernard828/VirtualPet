@@ -16,14 +16,17 @@ namespace VirtualPet
             Thirst = 50;
             Health = 50;
         }
+
         public int GetHunger()
         {
             return Hunger;
         }
+
         public int GetThirst()
         {
             return Thirst;
         }
+
         public int GetHealth()
         {
             return Health;
@@ -34,6 +37,7 @@ namespace VirtualPet
             Thirst += 5;
             Console.WriteLine($"\t{Name}'s new thirst level ({Thirst})");
         }
+
         public override void Feed()
         {
             this.Hunger += 5;
@@ -46,6 +50,7 @@ namespace VirtualPet
             this.Health += 30;
             Console.WriteLine($"\t{Name}'s new health level: ({Health})");
         }
+
         public override void Play()
         {
             this.Hunger += 10;
@@ -57,6 +62,7 @@ namespace VirtualPet
             $"\tHunger:{Hunger}, Thirst:{Thirst}, Health:{Health}, Boredom:{Boredom}");
             Console.WriteLine("That was fun!");
         }
+
         public override void Tick()
         {
             Hunger += 5;
@@ -67,6 +73,7 @@ namespace VirtualPet
             Console.WriteLine($"\n\t{Name}:" +
             $"\tHunger:{Hunger}, Thirst:{Thirst}, Health:{Health}, Boredom:{Boredom}");
         }
+
         public override void PrintThisPetStats() 
         {
             int listnumber = 1;
@@ -74,6 +81,7 @@ namespace VirtualPet
 
             Console.WriteLine($"\t{listnumber}.  |\t {Name}\t||Health({Health})|Boredom ({Boredom})|Hunger({Hunger})|Thirst({Thirst})|{Species}");
         }
+
         public override void CreatePet()
         {
             Console.WriteLine("\n\tWhat's the animal's name?");
