@@ -15,9 +15,7 @@ namespace VirtualPet
         public List<RoboticPet> roboList = new List<RoboticPet>();
         public List<OrganicPet> orgList = new List<OrganicPet>();
 
-        public PetShelter()
-        {
-        }
+        public PetShelter() {  }
 
         public void AddPet(Pet pet)
         {
@@ -27,7 +25,7 @@ namespace VirtualPet
         public void PrintAllPetsList()
         {
             int listnumber = 1;
-            Console.WriteLine("\t No.|\tName\t||  Species");
+            Console.WriteLine("\t No.| \t Name \t |  Species");
             
             foreach (Pet pet in allPetsList)
             {
@@ -37,6 +35,7 @@ namespace VirtualPet
                 listnumber++;
             }
         }
+
         public void PrintAllPetsStats()
         {
             int listnumber = 1;
@@ -52,6 +51,7 @@ namespace VirtualPet
                 listnumber++;
             }
         }
+
         public Pet FindAnimalByIndex()
         {
             int numberForPet = Convert.ToInt32(Console.ReadLine());
@@ -60,6 +60,7 @@ namespace VirtualPet
             return allPetsList[selectedPet];
 
         }
+        
         public void AdoptPet(Pet pet)
         {
             allPetsList.Remove(pet);
