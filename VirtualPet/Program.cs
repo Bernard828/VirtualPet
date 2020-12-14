@@ -20,7 +20,7 @@ namespace VirtualPet
             while (stillPlaying)
             {
                 //Rearange Numbering in Switch case to match the reordered menu
-                myShelter.TickOnAllPets();
+                //myShelter.TickOnAllPets();
                 Console.WriteLine("\n\tHello! Welcome to Virtual Pets");
                 Console.WriteLine($"\n\n\tYou are currently interacting with " + newPet.Name);
                 Console.WriteLine("\t1. Adopt a pet!");  //8
