@@ -22,17 +22,17 @@ namespace VirtualPet
                 //Rearange Numbering in Switch case to match the reordered menu
                 //myShelter.TickOnAllPets();
                 Console.WriteLine("\n\tHello! Welcome to Virtual Pets");
-                Console.WriteLine($"\n\n\tYou are currently interacting with " + newPet.Name);
-                Console.WriteLine("\t1. Adopt a pet!");  //8
-                Console.WriteLine("\t2. Bringing in a new pet?"); //2
-                Console.WriteLine("\t3. Select a certain pet to interact with."); //3
-                Console.WriteLine("\t4. View list of pets.");  //1
-                Console.WriteLine("\t5. Feed your pet(s)."); //4
-                Console.WriteLine("\t6. Give your pet(s) water."); //5
-                Console.WriteLine("\t7. Your pet(s) bored, let's play."); //6
-                Console.WriteLine("\t8. Time for a checkup with the vet."); //7
-                Console.WriteLine("\n\t Type 'Q' to end the game."); //Change 'Q' to 'E'
-                Console.WriteLine("\tPress enter to return to the Main Menu");
+                Console.WriteLine("\t1. Bringing an animal in?");
+                Console.WriteLine("\t2. Take home a pet!");
+                Console.WriteLine("\t3. View list of pets.");
+                Console.WriteLine($"\n\n\tThis is"+ newPet.Name);
+                Console.WriteLine("\t4. Select one to meet with.");
+                Console.WriteLine("\t5. Feed your pet(s).");
+                Console.WriteLine("\t6. Give your pet(s) water.");
+                Console.WriteLine("\t7. Your pet(s) bored, let's play.");
+                Console.WriteLine("\t8. Time for a checkup with the vet.");
+                Console.WriteLine("\n\t Type 'E' to end the game.");
+                Console.WriteLine("\tPushing 'ENTER' one too many, results in exiting game.");
 
                 string userChoice = Console.ReadLine().ToLower();
                 Console.Clear();
@@ -41,48 +41,48 @@ namespace VirtualPet
                 switch (userChoice)
                 { 
                     case "1":
-                        myShelter.PrintAllPetsList();
-                        Console.WriteLine("\n\tWho do you want to adopt?");
-                        Pet petToRemove = myShelter.FindAnimalByIndex();
-                        myShelter.AdoptPet(petToRemove);
-                        Console.WriteLine(newPet.Name + $"said yes!! You'll make a great pet parent!");
-
-                        //myShelter.PrintAllPetsList();
-                        //Console.Clear();
-                    break;
-                        
-
-                    case "2":
-
-                        Console.WriteLine("\tEnter 1' [Organic Pet] or '2' [Robotic Pet].");
+                        //Create function for organic/robotic pet choice.
+                        Console.WriteLine("What type of animal is it?");
+                        Console.WriteLine("1. Living Animal");
+                        Console.WriteLine("2. Robotic Animal");
                         string petChoice = Console.ReadLine();
 
                         switch (petChoice)
                         {
                             case "1":
-
-                                myShelter.PrintAllPetsList();
                                 organicPet = new OrganicPet();
                                 organicPet.CreatePet();
                                 myShelter.AddPet(organicPet);
                                 break;
                             
                             case "2":
-
-                                myShelter.PrintAllPetsList();
                                 roboticPet = new RoboticPet();
                                 roboticPet.CreatePet();
                                 myShelter.AddPet(roboticPet);
                                 break;
+
                             default:
                                 break;
                         }
+                    break;                        
+
+                    case "2":
+
+                        myShelter.PrintAllPetsList();
+                        Console.WriteLine("\n\tWho do you want to adopt?");
+                        Pet petToRemove = myShelter.FindAnimalByIndex();
+                        myShelter.AdoptPet(petToRemove);
+                        Console.WriteLine(newPet.Name + $"said yes!! You'll make a great pet parent!");
+
+                        
+                        //Console.Clear();
+
                         break;
                         
 
                     case "3":
                         myShelter.PrintAllPetsList();
-                        Console.WriteLine("Select pet by number to view.");
+                        Console.WriteLine("Choose an animal by kennel number.");
                         newPet = myShelter.FindAnimalByIndex();
                         break;
 
