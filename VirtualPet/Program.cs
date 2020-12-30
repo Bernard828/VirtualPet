@@ -69,20 +69,17 @@ namespace VirtualPet
                     case "2":
 
                         myShelter.PrintAllPetsList();
-                        Console.WriteLine("\n\tWho do you want to adopt?");
+                        Console.WriteLine("\n\tWhich animal do you want to take home?");
+                        Console.WriteLine("Choose an animal by their number on the list.");
                         Pet petToRemove = myShelter.FindAnimalByIndex();
                         myShelter.AdoptPet(petToRemove);
                         Console.WriteLine(newPet.Name + $"said yes!! You'll make a great pet parent!");
-
-                        
                         //Console.Clear();
-
                         break;
                         
-
                     case "3":
                         myShelter.PrintAllPetsList();
-                        Console.WriteLine("Choose an animal by kennel number.");
+                        Console.WriteLine("Choose an animal by the kennel number.");
                         newPet = myShelter.FindAnimalByIndex();
                         break;
 
