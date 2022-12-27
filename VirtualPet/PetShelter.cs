@@ -15,18 +15,18 @@ namespace VirtualPet
         public List<RoboticPet> roboList = new List<RoboticPet>();
         public List<OrganicPet> orgList = new List<OrganicPet>();
 
-        public PetShelter() {  }
+        public PetShelter() { }
 
         public void AddPet(Pet pet)
         {
             allPetsList.Add(pet);
         }
-               
+
         public void PrintAllPetsList()
         {
             int listnumber = 1;
             Console.WriteLine("\t No.| \t Name \t |  Species");
-            
+
             foreach (Pet pet in allPetsList)
             {
                 string Name = pet.GetName();
@@ -52,7 +52,7 @@ namespace VirtualPet
             }
         }
 
-        public Pet FindAnimalByIndex()
+        public Pet FindAnimalByIndex()// breaks when exit without entry
         {
             int numberForPet = Convert.ToInt32(Console.ReadLine());
             int selectedPet = (numberForPet - 1);
@@ -60,22 +60,22 @@ namespace VirtualPet
             return allPetsList[selectedPet];
 
         }
-        
+
         public void AdoptPet(Pet pet)
         {
             allPetsList.Remove(pet);
         }
-        
+
         public void FeedAll()
         {
             foreach (Pet roboticPet in allPetsList)
             {
                 roboticPet.Feed();
             }
-            foreach ( Pet organicPet in allPetsList)
+            foreach (Pet organicPet in allPetsList)
             {
-                 organicPet.Feed();
-            }            
+                organicPet.Feed();
+            }
         }
 
         public void WaterAll()
@@ -101,10 +101,10 @@ namespace VirtualPet
                 pet.Play();
             }
         }
-     
+
         public void TickOnAllPets()
         {
-            foreach( Pet pet in allPetsList)
+            foreach (Pet pet in allPetsList)
             {
                 pet.Tick();
             }

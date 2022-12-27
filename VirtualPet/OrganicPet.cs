@@ -90,12 +90,16 @@ namespace VirtualPet
 
             SetName(name);
 
+            Console.Clear();
+
 
             Console.WriteLine("\n\tWhat type of animal?");
 
             string species = Console.ReadLine();
 
             SetSpecies(species);
+
+            Console.Clear();
         }
     }
 }

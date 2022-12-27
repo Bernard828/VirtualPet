@@ -37,12 +37,10 @@ namespace VirtualPet
         {
             return Name;
         }
-
         public virtual string GetSpecies()
         {
             return Species;
         }
-       
         public  virtual int GetBoredom()
         {
             return Boredom;
@@ -51,7 +49,6 @@ namespace VirtualPet
         {
 
         }
-
         public virtual void GiveWater()
         {
            
@@ -60,21 +57,18 @@ namespace VirtualPet
         {
 
         }
-
         public virtual void SeeDoctor()
         {
          
         }
-
-
         public virtual void Play()
         { 
 
         }
         public virtual void Tick()
         {
-        }
 
+        }
         public virtual void PrintThisPetStats()
         {
 
